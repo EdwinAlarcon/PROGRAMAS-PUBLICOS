@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zapatas V3 · kgf · Datos precargados</title>
+<style>
+:root{--ink:#172c3a;--muted:#586c79;--line:#dbe4e9;--bg:#f2f5f7;--teal:#087f8c;--blue:#356ac3;--orange:#bb6419;--red:#ac3344;--green:#167256}*{box-sizing:border-box}body{margin:0;background:var(--bg);font:14px/1.5 'Segoe UI',Arial,sans-serif;color:var(--ink)}header{background:#122c3a;color:white;padding:27px max(25px,calc((100vw - 1540px)/2));display:flex;justify-content:space-between;align-items:center;gap:20px}h1{font-size:29px;letter-spacing:-1px;margin:2px 0}header p{color:#b8d2dc;margin:3px 0}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:10px;font-weight:700;color:#64d5cf}.version{border:1px solid #45616d;border-radius:30px;padding:7px 13px;font-size:11px;white-space:nowrap}.layout{max-width:1600px;margin:auto;display:grid;grid-template-columns:325px minmax(0,1fr);gap:22px;padding:22px}aside{align-self:start;background:white;border:1px solid var(--line);border-radius:14px;overflow:hidden}main{min-width:0}.side-title{padding:17px 18px;background:#f8fafb;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}h2{font-size:19px;margin:0 0 13px}h3{font-size:16px;margin:0 0 8px}p{margin:7px 0 12px}.small,small{font-size:12px;color:var(--muted)}details{border-bottom:1px solid var(--line)}summary{cursor:pointer;padding:14px 18px;font-weight:650}details>.content{padding:0 18px 18px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:11px 12px}.field{display:block;font-size:12px;color:var(--muted)}.field input,.field select{display:block;width:100%;margin-top:4px;padding:8px 9px;border:1px solid #c6d3da;border-radius:7px;background:#fff;color:var(--ink);font:600 14px 'Segoe UI',sans-serif;min-height:36px}.field input:focus,.field select:focus{outline:2px solid #74d6d1;outline-offset:1px}.full{grid-column:1/-1}.hint{font-size:12px;color:var(--muted);padding:10px 12px;background:#f1f6f8;border-radius:7px;margin:10px 0 0}.check{display:flex;align-items:flex-start;gap:8px;font-size:12px;margin:12px 0 0}.check input{margin-top:3px}.load-table{width:100%;font-size:11px;border-collapse:collapse}.load-table th{font-size:10px;padding:3px}.load-table input{width:100%;min-width:0;border:1px solid #c6d3da;border-radius:5px;padding:7px 3px;font-size:12px}.load-table td{padding:3px 2px}.actions{display:flex;gap:8px;flex-wrap:wrap}button{font:600 12px 'Segoe UI',sans-serif;cursor:pointer;border:1px solid #c9d6dd;border-radius:7px;background:white;color:var(--ink);padding:9px 13px}button:hover{background:#e9f2f5}button.primary{background:var(--teal);color:white;border-color:var(--teal)}button:disabled{opacity:.45;cursor:wait}.side-actions{padding:16px 18px}.side-actions .primary{width:100%;font-size:14px}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}.status{font-size:12px;color:var(--muted)}.panel{background:white;border:1px solid var(--line);border-radius:13px;padding:20px;margin-bottom:18px}.notice{padding:15px 18px;border:1px solid #bfdfe0;background:#eaf6f5;border-radius:10px;margin-bottom:18px}.notice.warn{background:#fff7e8;border-color:#ead5ac}.notice.error{background:#fff0f2;border-color:#e6b5bd;color:#85283a;white-space:pre-line}.notice h3{font-size:15px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:15px 0 18px}.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:10px;padding:17px;min-width:0}.card.winkler{border-top-color:var(--orange)}.card.pasternak{border-top-color:var(--teal)}.card .metric{font-size:29px;font-weight:700;letter-spacing:-1px;margin:12px 0 3px}.unit{font-size:12px;font-weight:400;letter-spacing:0;color:var(--muted)}.card dl{display:grid;grid-template-columns:1fr auto;margin:13px 0 0;font-size:12px;gap:6px}.card dd{margin:0;font-weight:600}.card dt{color:var(--muted)}.badge{display:inline-block;font-size:10px;font-weight:700;border-radius:20px;padding:3px 8px;background:#eef3f6;color:#4d6573}.badge.ok{background:#e0f4e9;color:#176347}.badge.warn{background:#fff0d4;color:#8f5800}.badge.bad{background:#ffe3e8;color:#9b263c}.maps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.mapbox{min-width:0}.mapbox canvas{width:100%;height:auto;display:block}.mapbox h3{font-size:13px}.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:10px}.legend span:before{content:'';display:inline-block;width:9px;height:9px;background:var(--blue);margin-right:5px}.legend .w:before{background:var(--orange)}.legend .p:before{background:var(--teal)}.table-wrap{overflow:auto}table.results{border-collapse:collapse;width:100%;font-size:12px}table.results th{text-align:left;background:#f4f7f9;font-size:11px;color:#526978}table.results td,table.results th{padding:10px 11px;border-bottom:1px solid #e5ebef;vertical-align:top}table.results td small{display:block;font-size:10px;margin-top:3px}table.results tr:last-child td{border:0}.selectrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.selectrow select{font-size:12px;max-width:100%;padding:7px 10px;border:1px solid #c6d3da;border-radius:7px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}.pair canvas{width:100%;height:auto}.formula{font-family:Cambria,Georgia,serif;background:#f4f7f9;padding:12px;border-radius:6px;margin:8px 0;overflow-wrap:anywhere}.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.method-grid p{font-size:12px}.methodology summary{padding:0;font-size:17px}.methodology .content{padding:18px 0 0}a{color:#087783}.muted{color:var(--muted)}#results[hidden], [hidden]{display:none!important}.busy{opacity:.6;pointer-events:none}.progress{height:3px;background:linear-gradient(90deg,#087f8c,#a7e7de,#087f8c);background-size:200%;animation:progress 1.5s linear infinite;position:fixed;top:0;left:0;width:100%;z-index:10}@keyframes progress{to{background-position:200%}}footer{font-size:11px;color:var(--muted);text-align:center;padding:15px 20px 30px}.print-only{display:none}ul{padding-left:20px}.print-inputs{columns:3;font-size:10px}
+@media(max-width:1100px){.layout{grid-template-columns:285px minmax(0,1fr);gap:14px;padding:14px}.cards{gap:8px}.card{padding:12px}.maps{grid-template-columns:1fr}.mapbox{max-width:450px;margin:auto;width:100%}.pair,.method-grid{grid-template-columns:1fr}.card .metric{font-size:23px}}
+@media(max-width:760px){header{padding:20px;align-items:start}.version{display:none}.layout{display:block}aside{margin-bottom:18px}.cards{grid-template-columns:1fr}.toolbar{align-items:start;flex-direction:column}.card .metric{font-size:29px}.panel{padding:15px}}
+@media print{@page{size:A4;margin:13mm}body{background:white;font-size:10px}header{padding:0 0 10px;background:white;color:#172c3a}header p{color:#526978}aside,.toolbar,.no-print,footer,.progress{display:none!important}.layout{display:block;padding:0}.panel,.card{break-inside:avoid}.panel{padding:12px;margin-bottom:12px}.print-only{display:block}.cards,.maps{grid-template-columns:repeat(3,minmax(0,1fr))}.mapbox{width:100%}.card .metric{font-size:21px}table.results{font-size:10px}table.results th,table.results td{padding:6px}.notice{break-inside:avoid}.method-grid{display:block}.version{border:0}a{color:inherit}.eyebrow{color:#087f8c}.pair{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<div id="progress" class="progress" hidden></div>
+<header><div><div class="eyebrow">V3 · kgf · Datos precargados</div><h1>Zapatas, bajo tres perspectivas.</h1><p>Rígido · Winkler · Pasternak — equilibrio, contacto y resistencia.</p></div><div class="version">E.060 · 2009 / kgf · m · cm</div></header>
+<div class="layout"><aside>
+<div class="side-title"><strong>Datos del proyecto</strong><span class="badge">Interactivo</span></div>
+<div class="hint" style="margin:12px 18px"><strong>Referencia del ejemplo inicial</strong><br>L = 3 m · B = 2.5 m · h = 60 cm<br>Columna = 50 × 40 cm · recubrimiento = 7.5 cm<br><small>Estos son los valores de partida, no un resumen de tus modificaciones. Los campos editables están debajo.</small></div>
+<div class="content" style="padding:15px 18px;border-bottom:1px solid var(--line)"><label class="field">Empezar con un ejemplo<select id="preset"><option value="original">Ejemplo inicial · cargas y momentos</option><option value="simple">Centrada · solo carga vertical</option><option value="edgeX">Lindero X · solo carga vertical</option><option value="corner">Esquina · solo carga vertical</option></select></label><button type="button" id="loadPreset" style="margin-top:9px;width:100%">Cargar ejemplo y calcular</button><p class="small" style="margin:8px 0 0">Todos los datos quedan editables. Para empezar, cambia L, B o h y compara los resultados. Son ejemplos, no diseños aprobados.</p></div>
+<form id="inputs" novalidate>
+<details open><summary>01 · Geometría y sistema</summary><div class="content"><div class="fields">
+<label class="field full">Sistema de cimentación<select id="system"><option value="isolated">Zapata aislada, sin viga centradora</option><option value="connected">Con viga centradora — requiere otro modelo</option></select></label>
+<label class="field full">Posición de la columna<select id="type"><option value="center" selected>Centrada</option><option value="edgeX">Lindero en X−</option><option value="edgeY">Lindero en Y−</option><option value="corner">Esquina X− / Y−</option></select></label>
+<label class="field">Longitud X · L (m)<input id="L" type="number" step="0.1" value="3"></label><label class="field">Longitud Y · B (m)<input id="B" type="number" step="0.1" value="2.5"></label>
+<label class="field">Espesor h (cm)<input id="h" type="number" step="5" value="60"></label><label class="field">Recubrimiento (cm)<input id="cover" type="number" step="0.5" value="7.5"></label>
+<label class="field">Columna X (cm)<input id="cx" type="number" step="5" value="50"></label><label class="field">Columna Y (cm)<input id="cy" type="number" step="5" value="40"></label>
+</div><p id="geometryHint" class="hint"></p><label class="check"><input id="allowPartial" type="checkbox">Existe un criterio geotécnico documentado para evaluar contacto parcial. No constituye aprobación automática.</label></div></details>
+<details open><summary>02 · Acciones en la columna</summary><div class="content"><table class="load-table"><thead><tr><th>Caso</th><th>P (tonf)</th><th>Mx (tonf·m)</th><th>My (tonf·m)</th></tr></thead><tbody>
+<tr><th>D</th><td><input id="PD" type="number" step="0.01" aria-label="Carga axial muerta" value="81.57729703823428"></td><td><input id="MDx" type="number" step="0.01" aria-label="Momento muerto X" value="4.078864851911713"></td><td><input id="MDy" type="number" step="0.01" aria-label="Momento muerto Y" value="2.549290532444821"></td></tr>
+<tr><th>L</th><td><input id="PL" type="number" step="0.01" aria-label="Carga axial viva" value="30.59148638933785"></td><td><input id="MLx" type="number" step="0.01" aria-label="Momento vivo X" value="2.0394324259558566"></td><td><input id="MLy" type="number" step="0.01" aria-label="Momento vivo Y" value="1.5295743194668926"></td></tr>
+<tr><th>E</th><td><input id="PE" type="number" step="0.01" aria-label="Carga axial sísmica" value="5.098581064889642"></td><td><input id="MEx" type="number" step="0.01" aria-label="Momento sísmico X" value="8.157729703823427"></td><td><input id="MEy" type="number" step="0.01" aria-label="Momento sísmico Y" value="6.11829727786757"></td></tr>
+</tbody></table><p class="hint">Acciones en la base de la columna; excluyen peso propio y relleno. P positivo hacia abajo. My positivo desplaza la resultante hacia X+; Mx positivo hacia Y+. Se evalúa ±E como un vector correlacionado, no como máximos independientes.</p><div class="fields" style="margin-top:12px"><label class="field">γ concreto (kgf/m³)<input id="gamma" type="number" step="1" value="2447.3189111470283"></label><label class="field">Relleno uniforme (kgf/m²)<input id="fill" type="number" step="1" value="0"></label></div><p class="small">D incluye automáticamente γ·h y el relleno sobre toda la base. Sin empujes laterales, agua ni acciones horizontales.</p></div></details>
+<details open><summary>03 · Suelo y contacto</summary><div class="content"><div class="fields">
+<label class="field">q admisible (kgf/cm²)<input id="qa" type="number" step="0.1" value="3.569006745422749"></label><label class="field">Base de q admisible<select id="qaType"><option value="gross" selected>Bruta</option><option value="net">Neta</option></select></label>
+<label class="field full">Presión inicial retirada σv0 (kgf/cm²)<input id="overburden" type="number" step="0.1" value="0"></label>
+<label class="field">Balasto ks (kgf/cm³)<input id="ks" type="number" step="0.1" value="5.098581064889642"></label><label class="field">Pasternak Gp (kgf/cm)<input id="Gp" type="number" step="100" value="1019.7162129779284"></label>
+<div class="field full"><button type="button" id="gpEstimateToggle">Estimar Gp desde Es del suelo (Vlasov-Leontiev simplificado)</button>
+<div id="gpEstimatePanel" hidden style="margin-top:10px;padding:12px 14px;border:1px solid #c6d3da;border-radius:9px;background:#f8fafb">
+  <div class="fields">
+    <label class="field">Espesor del estrato compresible H (m)<input id="gpH" type="number" step="0.1" min="0.1"></label>
+    <label class="field">Tipo de suelo (sugiere Es y ν)<select id="gpSoilType">
+      <option value="150,0.22">Arena suelta (Es≈150 kgf/cm², ν≈0.22)</option>
+      <option value="400,0.35" selected>Arena densa (Es≈400 kgf/cm², ν≈0.35)</option>
+      <option value="600,0.35">Grava (Es≈600 kgf/cm², ν≈0.35)</option>
+      <option value="50,0.35">Arcilla, largo plazo / drenada (Es≈50 kgf/cm², ν≈0.35)</option>
+      <option value="300,0.48">Arcilla, corto plazo / no drenada (Es≈300 kgf/cm², ν≈0.48)</option>
+      <option value="5000,0.20">Roca (Es≈5000 kgf/cm², ν≈0.20)</option>
+      <option value="manual">Otro — ingresar Es y ν manualmente</option>
+    </select></label>
+    <label class="field" id="gpEsManualWrap">Es del suelo (kgf/cm²)<input id="gpEsManual" type="number" step="10" min="1" value="400"></label>
+    <label class="field" id="gpNuManualWrap">ν del suelo<input id="gpNuManual" type="number" step="0.01" min="0" max="0.49" value="0.35"></label>
+  </div>
+  <p class="hint">H se mide desde el fondo de la zapata hacia abajo: hasta un estrato rígido identificado en el estudio de suelos, o —si no hay uno claro— una profundidad de influencia convencional (≈2B a 4B). Es y ν son del <strong>suelo</strong> (del ensayo de módulo, triaxial, o correlación con SPT/qc), no del concreto. Fórmulas (Vlasov-Leontiev, decaimiento lineal simplificado): k₁ = Es/(H·(1−ν²)) — un ks teórico de referencia — y Gp = Es·H/(6·(1+ν)). Son estimaciones de orden de magnitud, no valores normativos.</p>
+  <div class="actions"><button type="button" id="gpEstimateCompute">Calcular</button></div>
+  <div id="gpEstimateResult" style="margin-top:10px"></div>
+</div>
+</div>
+<label class="field full">Asentamiento elástico límite (cm)<input id="sett" type="number" step="0.1" value="2.5"></label></div>
+<p class="hint">Los valores iniciales son un ejemplo, no una clasificación del suelo. ks, Gp y q admisible deben justificarse con el estudio geotécnico. Gp es la rigidez de la capa de cortante; no es el módulo G en kgf/cm².</p></div></details>
+<details><summary>04 · Concreto y acero</summary><div class="content"><div class="fields">
+<label class="field">f’c (kgf/cm²)<input id="fc" type="number" step="1" value="214.14040472536493"></label><label class="field">fy (kgf/cm²)<input id="fy" type="number" step="10" value="4282.808094507299"></label>
+<label class="field">Ec (kgf/cm²)<input id="Ec" type="number" step="100" value="219626.47795118619"></label><label class="field">Poisson ν<input id="nu" type="number" step="0.01" value="0.2"></label>
+<label class="field full">Factor de rigidez efectiva η<input id="eta" type="number" step="0.05" value="1"></label>
+<label class="field full">Teoría de placa para modelos elásticos<select id="theory"><option value="mindlin" selected>Mindlin–Reissner · incluye cortante transversal</option><option value="kirchhoff">Kirchhoff–Love · placa delgada</option></select></label>
+<label class="field">Barra X Ø (cm)<input id="dbX" type="number" step="0.1" value="1.6"></label><label class="field">Separación X máx. (cm)<input id="spX" type="number" step="1" value="15"></label>
+<label class="field">Barra Y Ø (cm)<input id="dbY" type="number" step="0.1" value="1.6"></label><label class="field">Separación Y máx. (cm)<input id="spY" type="number" step="1" value="15"></label>
+<label class="field">Capa más cercana al suelo<select id="bottom"><option value="x" selected>Barras X</option><option value="y">Barras Y</option></select></label><label class="field">Agregado máx. (cm)<input id="aggregate" type="number" step="0.1" value="1.9000000000000001"></label></div>
+<label class="check"><input id="topBars" type="checkbox">Colocar también una malla superior con los mismos diámetros y separaciones, reflejada respecto a la inferior.</label><button type="button" id="ecButton" style="margin-top:12px">Estimar Ec según E.060</button><p class="small">Concreto normal, barras corrugadas sin epoxi, anclaje recto y sin confinamiento adicional. η es una hipótesis de rigidez, no un cálculo de fisuración.</p></div></details>
+<details><summary>05 · Precisión del modelo</summary><div class="content"><div class="fields"><label class="field">Celdas en X<select id="mesh"><option>12</option><option selected>18</option><option>24</option><option>30</option></select></label><label class="field">Refinamiento local de placa<select id="order"><option>4</option><option>6</option><option>8</option><option selected>10</option><option>12</option><option>14</option></select></label></div><p class="hint">El residuo de equilibrio comprueba fuerzas y momentos; no demuestra por sí solo convergencia de presiones ni esfuerzos locales. El nivel de placa añade divisiones locales; no aumenta el grado polinómico. Compare malla y placa por separado.</p></div></details>
+<div class="side-actions"><button type="submit" class="primary">Analizar los tres métodos</button><label class="check"><input id="auto" type="checkbox" checked>Recalcular al cambiar los datos</label></div></form></aside>
+<main><noscript><div class="notice error">Los valores iniciales están visibles, pero el cálculo necesita JavaScript. Abre este archivo HTML directamente en Chrome, Edge o Firefox; una vista previa de archivos puede impedir la ejecución.</div></noscript><div class="toolbar"><div id="status" class="status" role="status" aria-live="polite">Datos de ejemplo cargados. Si el cálculo no inicia, abre el HTML directamente en tu navegador.</div><div class="actions"><button id="save">Guardar caso</button><button id="importButton">Abrir caso</button><input id="importFile" type="file" accept=".json" hidden><button id="print" disabled>Imprimir / PDF</button><button id="reset">Restaurar valores iniciales</button></div></div>
+<div id="error" class="notice error" role="alert" hidden></div>
+<div id="intro" class="notice"><h3>Tres modelos físicos. Una misma pregunta: ¿cómo responde la cimentación?</h3><p class="small">Unidades de trabajo: kgf, m y cm. Explore la distribución del contacto, los esfuerzos y la sensibilidad a la rigidez. Los resultados separan las verificaciones realizadas de las revisiones necesarias para completar el diseño.</p></div>
+<div id="results" hidden>
+<div class="print-only panel"><h2>Datos del caso</h2><div id="printInputs" class="print-inputs"></div></div>
+<div id="diagnosis" class="notice"></div>
+<div class="panel"><div class="selectrow"><h2 style="margin:0">Servicio · contacto y presiones</h2><select id="serviceCase" aria-label="Combinación de servicio"></select></div><p class="small">Las tres tarjetas corresponden a la misma combinación. La resistencia se verifica después con la envolvente de todas las combinaciones últimas.</p><div id="eccentricityCheck"></div><div id="cards" class="cards"></div><div class="maps"><div class="mapbox"><h3>01 · Rígido</h3><canvas id="map-rigid" width="480" height="385" aria-label="Mapa de presiones rígido"></canvas></div><div class="mapbox"><h3>02 · Winkler</h3><canvas id="map-winkler" width="480" height="385" aria-label="Mapa de presiones Winkler"></canvas></div><div class="mapbox"><h3>03 · Pasternak</h3><canvas id="map-pasternak" width="480" height="385" aria-label="Mapa de presiones Pasternak"></canvas></div></div><p class="small">Presión de contacto q(x,y), en kgf/cm²: azul = menor presión; rojo = mayor presión; blanco = sin presión. Los números indican muestras locales en la base y la escala es compartida entre los tres métodos. Contorno oscuro: columna · rombo discontinuo: núcleo central fijo · círculo rojo con cruz y letra R: resultante en (ex, ey). Pase el cursor sobre la base para consultar la presión local. Los valores elásticos son promedios de celda, no picos exactos en el borde.</p><div id="serviceEnvelope"></div></div>
+<div class="panel"><h2>Resistencia · envolvente de combinaciones</h2><p class="small">Barras X resisten flexión en la dirección X (momento alrededor de Y). Los modelos elásticos incluyen momentos locales y torsión de placa mediante una envolvente conservadora m ± |mxy|. No se mezclan componentes de diferentes casos al calcular punzonamiento.</p><div id="resistancePrecision" class="hint"></div><div id="resistance" class="table-wrap"></div><div id="detailing" style="margin-top:15px"></div>
+<div style="margin-top:18px"><h3>Disposición de armadura (planta)</h3><div class="mapbox" style="max-width:640px"><canvas id="rebarLayout" width="640" height="520" aria-label="Planta de armado con ganchos"></canvas></div><p class="small">Vista en planta, no a escala de detalle de gancho (se exagera para que sea visible). Ganchos a 90° dibujados solo donde el anclaje recto no alcanza en la cara verificada. La malla se reparte uniforme en toda la zapata, centrada en la zapata (no en la columna). Si hay acero superior declarado, se dibuja con línea discontinua en el mismo trazado en planta que el inferior (mismo diámetro y espaciamiento en este modelo); su necesidad de gancho se evalúa por separado y puede diferir del inferior.</p></div>
+</div>
+<div class="panel"><h2>Momentos locales y demandas de armado</h2><p>Resultados por metro de ancho, distintos de los momentos totales de los diagramas de equilibrio. La combinación es la seleccionada en los diagramas inferiores.</p><label>Magnitud <select id="localQuantity"><option value="mx">mx · flexión X</option><option value="my">my · flexión Y</option><option value="mxy">mxy · torsión</option><option value="bottomX">Demanda inferior X</option><option value="bottomY">Demanda inferior Y</option><option value="topX">Demanda superior X</option><option value="topY">Demanda superior Y</option></select></label><p class="small">Signos: mx y my positivos producen tracción inferior. Demanda inferior = máx(0, m + |mxy|); superior = máx(0, −m + |mxy|). Es una transformación conservadora para armado ortogonal, no una flexión pura ni una implementación optimizada de Wood–Armer. Muestreo de 33 × 33 puntos: máximos muestreados, sujetos a convergencia. Pase el cursor para leer valores.</p><div class="pair"><div><h3>Winkler · kgf·m/m</h3><canvas id="local-winkler" width="480" height="385"></canvas></div><div><h3>Pasternak · kgf·m/m</h3><canvas id="local-pasternak" width="480" height="385"></canvas></div></div><p>Rígido: no calcula un campo local de placa. Su demanda procede de cortes en las caras de columna; un valor superior cero no demuestra ausencia de efectos locales.</p><div id="faceDiagnostics"></div><div id="momentTrace"></div></div>
+<div class="panel"><div class="selectrow"><h2 style="margin:0">Diagramas de equilibrio</h2><select id="ultimateCase" aria-label="Combinación última para diagramas"></select><select id="diagramAxis" aria-label="Dirección del diagrama"><option value="x">Dirección X</option><option value="y">Dirección Y</option></select></div><p class="small">Cortes sobre todo el ancho, integrados desde el borde negativo. Incluyen reacción, peso distribuido y acciones transmitidas por el área de columna. No son diagramas de una franja local de placa.</p><div class="pair"><div><h3>Momento total (kgf·m)</h3><canvas id="momentChart" width="620" height="260"></canvas></div><div><h3>Cortante total (kgf)</h3><canvas id="shearChart" width="620" height="260"></canvas></div></div><div class="legend"><span>Rígido</span><span class="w">Winkler</span><span class="p">Pasternak</span></div></div>
+<div class="panel"><div class="toolbar"><div><h2>¿El resultado cambia al refinar?</h2><p class="small">Comprueba todos los casos de servicio y resistencia, no solo el seleccionado.</p></div><label>Refinar <select id="refineTarget"><option value="plate">Solo placa</option><option value="soil">Solo malla del suelo</option></select></label><button id="refine" class="primary">Comparar refinamiento</button></div><div id="convergence"><p class="hint">Aún no comprobado. Compare dos resoluciones antes de interpretar picos locales o diferencias pequeñas entre modelos.</p></div></div>
+</div>
+<div class="panel methodology"><details id="methodology"><summary>Fundamento, alcance y referencias</summary><div class="content"><div class="method-grid">
+<div><h3>Rígido · contacto unilateral</h3><div class="formula">q(x,y) = máx(0, a + bx + cy)<br>∫q dA = N; ∫qx dA = My,total; ∫qy dA = Mx,total</div><p>Se resuelven tres parámetros por Newton sobre el polígono comprimido. La integración de fuerza y momentos es exacta para la presión afín en el polígono. Sin resistencia del suelo a tracción. Este método no calcula asentamientos.</p></div>
+<div><h3>Winkler · placa elástica</h3><div class="formula">D = η Ec h³ / [12(1−ν²)]<br>q = ks·u; u ≥ w; q ≥ 0; q(u−w) = 0</div><p>Por defecto: placa Mindlin–Reissner con desplazamiento en B-splines bicúbicos locales y giros en espacios compatibles cuadrático/cúbico. Las divisiones incluyen las caras de columna y se refinan de forma anidada. El grado cúbico permanece fijo. Incluye energía de cortante con S = (5/6)·η·Gc·h. Alternativamente, Kirchhoff–Love impone giros iguales al gradiente de w. Se minimiza la energía con funciones locales y bordes libres naturales. w y u son positivos hacia abajo; el contacto se impone sobre promedios de celda. La carga de columna se distribuye sobre su huella conservando P, Mx y My.</p></div>
+<div><h3>Pasternak · capa de cortante</h3><div class="formula">q = ks·u − Gp·∇²u<br>Us = ½∫[ks·u² + Gp·|∇u|²] dA</div><p>La superficie de suelo u tiene grados de libertad propios. La capa se discretiza por diferencias entre celdas; las condiciones de contacto se resuelven por conjunto activo. El suelo se modela solo bajo la huella, con flujo de cortante nulo en su perímetro. Esa condición puede concentrar reacciones de borde: no se afirma que Pasternak siempre las reduzca. Gp = 0 recupera Winkler.</p></div>
+<div><h3>Excentricidad · tres estados</h3><p>El núcleo identifica contacto completo únicamente en el modelo rígido. En una columna al lindero, sin pesos ni momentos adicionales, e = (L−c)/2; contacto completo exige L ≤ 1.5c. En contacto parcial uniaxial, a = 1.5c. Agrandar L no garantiza recuperar apoyo. La ubicación real de la columna y los signos de los momentos se conservan.</p><p>Una viga de amarre no equivale automáticamente a una viga centradora. El análisis de dos zapatas conectadas queda fuera de este modelo de zapata aislada.</p></div>
+<div><h3>Concreto · E.060 (2009)</h3><p>Combinaciones: 1.4D+1.7L; 1.25(D+L)±E; 0.9D±E. φ flexión = 0.90; φ cortante = 0.85. Flexión: bloque rectangular y límite 0.75 As balanceado. Acero mínimo y cortante unidireccional según E.060, con conversión dimensional de las expresiones normativas. Se revisan ambos lados y ambos ejes.</p><p>Punzonamiento: menor resistencia de E.060 11.12.2.1, perímetro recortado a d/2 e integración de reacción interior. Cuando existe momento neto, se muestra una comprobación elástica de flujo cortante que asigna el 100% a cortante; es una evaluación conservadora, no sustituye el reparto flexión–cortante y detallado de 11.12.6 / 13.5.3.</p></div>
+<div><h3>Alcance que debe completar el diseñador</h3><p>Las dos teorías de placa son elásticas lineales y bidimensionales. Mindlin incluye deformación por cortante; Kirchhoff la omite. Para zapatas muy gruesas, regiones de discontinuidad, punzonamiento y transferencia a la columna puede requerirse un modelo 3D o de bielas y tirantes. Los asentamientos corresponden a las cargas brutas aplicadas, no incluyen historia de excavación, consolidación, estratificación ni interacción con otras cimentaciones.</p><p>No se verifica deslizamiento, estabilidad global, capacidad portante geotécnica, anclaje de la columna, aplastamiento de la interfaz ni combinaciones direccionales completas de sismo. q admisible se proporciona desde el EMS; no se calcula a partir del tipo de suelo. El caso ±E representa una sola acción correlacionada que debe provenir del análisis estructural.</p></div>
+</div><p class="small">Referencias: <a href="https://cdn.www.gob.pe/uploads/document/file/2686419/E.060%20Concreto%20Armado%20DS%20N%C2%B0%20010-2009.pdf" target="_blank" rel="noopener">E.060 (2009), caps. 9, 10, 11, 12 y 15</a> · <a href="https://www.gob.pe/institucion/vivienda/informes-publicaciones/2309793-reglamento-nacional-de-edificaciones-rn" target="_blank" rel="noopener">RNE / E.050 y E.060</a> · <a href="https://www.fhwa.dot.gov/engineering/geotech/pubs/nhi06089.pdf" target="_blank" rel="noopener">FHWA, Soils and Foundations</a> · <a href="https://www.sciencedirect.com/science/article/pii/S004579492400227X" target="_blank" rel="noopener" id="plateRef">Fundamento de placa sobre suelo elástico</a>.</p></div></details></div>
+</main></div><footer>Laboratorio de zapatas · archivo autónomo, sin dependencias externas · resultados trazables por combinación y modelo.</footer>
+<script id="engine-source">/* Zapatas: SI (kN, m, kPa). Independent of the browser. */
+(function (root) {
+'use strict';
+const EPS=1e-10, sum=a=>a.reduce((s,v)=>s+v,0), dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0);
+const zeros=n=>new Float64Array(n);
+function solveSPD(A,b) {
+  const n=b.length,s=zeros(n),L=zeros(n*n),z=zeros(n),x=zeros(n);
+  for(let i=0;i<n;i++){if(!(A[i*n+i]>0)) throw Error('Sistema sin rigidez suficiente.');s[i]=Math.sqrt(A[i*n+i]);}
+  for(let i=0;i<n;i++)for(let j=0;j<=i;j++){
+    let v=A[i*n+j]/s[i]/s[j];for(let k=0;k<j;k++)v-=L[i*n+k]*L[j*n+k];
+    if(i===j){if(v<1e-13)throw Error('Sistema singular o mal condicionado; revise contacto y geometría.');L[i*n+j]=Math.sqrt(v);}else L[i*n+j]=v/L[j*n+j];
+  }
+  for(let i=0;i<n;i++){let v=b[i]/s[i];for(let k=0;k<i;k++)v-=L[i*n+k]*z[k];z[i]=v/L[i*n+i];}
+  for(let i=n-1;i>=0;i--){let v=z[i];for(let k=i+1;k<n;k++)v-=L[k*n+i]*x[k];x[i]=v/L[i*n+i];}
+  return x.map((v,i)=>v/s[i]);
+}
+function gauss(n) {
+  const out=[];for(let i=1;i<=n;i++){
+    let z=Math.cos(Math.PI*(i-.25)/(n+.5)),p,dp;
+    for(let it=0;it<40;it++){let p0=1,p1=z;for(let j=2;j<=n;j++){let p2=((2*j-1)*z*p1-(j-1)*p0)/j;p0=p1;p1=p2;}p=n===1?z:p1;dp=n*(z*p-p0)/(z*z-1);let d=p/dp;z-=d;if(Math.abs(d)<1e-14)break;}
+    out.push([z,2/((1-z*z)*dp*dp)]);
+  }return out;
+}
+function quadRect(r,n,fn){let s=0;if(r[1]<=r[0]||r[3]<=r[2])return 0;const g=gauss(n),hx=(r[1]-r[0])/2,hy=(r[3]-r[2])/2;for(const [x,wx] of g)for(const [y,wy] of g)s+=fn((r[0]+r[1])/2+hx*x,(r[2]+r[3])/2+hy*y)*wx*wy*hx*hy;return s;}
+function rectPoly(r){return [[r[0],r[2]],[r[1],r[2]],[r[1],r[3]],[r[0],r[3]]];}
+function clip(poly,a){const out=[];if(!poly.length)return out;for(let i=0;i<poly.length;i++){const p=poly[i],q=poly[(i+1)%poly.length],fp=a[0]+a[1]*p[0]+a[2]*p[1],fq=a[0]+a[1]*q[0]+a[2]*q[1];if(fp>=0)out.push(p);if((fp>=0)!==(fq>=0)){const t=fp/(fp-fq);out.push([p[0]+t*(q[0]-p[0]),p[1]+t*(q[1]-p[1])]);}}return out;}
+function polyInt(poly,fn){let v=0;for(let i=1;i<poly.length-1;i++){const a=poly[0],b=poly[i],c=poly[i+1],area=Math.abs((b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]))/2;for(const w of [[2/3,1/6,1/6],[1/6,2/3,1/6],[1/6,1/6,2/3]])v+=area/3*fn(w[0]*a[0]+w[1]*b[0]+w[2]*c[0],w[0]*a[1]+w[1]*b[1]+w[2]*c[1]);}return v;}
+const intersect=(a,b)=>[Math.max(a[0],b[0]),Math.min(a[1],b[1]),Math.max(a[2],b[2]),Math.min(a[3],b[3])];
+const bounds=c=>[-c.L/2,c.L/2,-c.B/2,c.B/2];
+function geometry(c){let x=0,y=0;if(c.type==='edgeX'||c.type==='corner')x=-c.L/2+c.cx/2;if(c.type==='edgeY'||c.type==='corner')y=-c.B/2+c.cy/2;return {x,y,col:[x-c.cx/2,x+c.cx/2,y-c.cy/2,y+c.cy/2]};}
+function validate(c){
+  const errors=[];for(const [k,v] of Object.entries(c))if(typeof v==='number'&&!Number.isFinite(v))errors.push(`${k}: valor no finito.`);
+  for(const k of ['L','B','h','cx','cy','fc','fy','Ec','ks','qa','sett','dbX','dbY','spX','spY','cover','aggregate'])if(!(c[k]>0))errors.push(`${k}: debe ser positivo.`);
+  if(c.cx>c.L||c.cy>c.B)errors.push('La columna debe estar contenida en la zapata.');
+  if(c.cover<.07)errors.push('Recubrimiento mínimo de 7 cm para concreto colocado contra el suelo (E.060 7.7.1).');
+  if(c.h-c.cover-(c.dbX+c.dbY)/1000<.30)errors.push('Espesor insuficiente: se requieren al menos 30 cm sobre el refuerzo inferior en zapatas sobre suelo (E.060 15.7).');
+  if(c.nu<0||c.nu>=.49)errors.push('Poisson debe estar entre 0 y 0.49.');
+  if(c.Gp<0||c.gamma<0||c.fill<0||c.overburden<0)errors.push('Gp, peso unitario y sobrecargas no pueden ser negativos.');
+  if(c.eta<=0||c.eta>1)errors.push('El factor de rigidez debe estar entre 0 y 1.');
+  if(c.PD<=0||c.PL<0)errors.push('PD debe ser positivo y PL no negativo.');
+  if(!['center','edgeX','edgeY','corner'].includes(c.type))errors.push('Tipo de zapata no reconocido.');
+  if(![4,6,8,10,12,14].includes(c.order)||![12,18,24,30].includes(c.mesh))errors.push('Resolución numérica no válida.');
+  if(c.L/c.B<.2||c.L/c.B>5)errors.push('Relación L/B fuera del alcance de esta discretización (0.2 a 5).');
+  if(!['x','y'].includes(c.bottom)||!['gross','net'].includes(c.qaType))errors.push('Convención de armadura o presión no válida.');
+  if(!['mindlin','kirchhoff'].includes(c.theory))errors.push('Teoría de placa no reconocida.');
+  if(Math.min(c.L,c.B)<=2*c.cover+2*Math.max(c.dbX,c.dbY)/1000)errors.push('La base no deja espacio para recubrimientos y barras.');
+  if(c.spX>500||c.spY>500)errors.push('Separación de barras fuera del rango admitido (máximo 50 cm).');
+  if(c.fc<17||c.fc>70||c.fy<280||c.fy>550)errors.push('Materiales fuera del alcance: f’c entre 173.3518 y 713.8014 kgf/cm²; fy entre 2855.2054 y 5608.4392 kgf/cm² (límites aproximados).');
+  if(errors.length)throw Error(errors.join('\n'));
+}
+function load(c,co){const g=geometry(c),P=co.d*c.PD+co.l*c.PL+co.e*c.PE,Mx=co.d*c.MDx+co.l*c.MLx+co.e*c.MEx,My=co.d*c.MDy+co.l*c.MLy+co.e*c.MEy,w=co.d*(c.gamma*c.h+c.fill),N=P+w*c.L*c.B;return {name:co.name,P,Mx,My,w,N,Tx:P*g.x+My,Ty:P*g.y+Mx,...g};}
+function combinations(c){const serv=[{name:'S · D + L',d:1,l:1,e:0}];const ult=[{name:'U · 1.4D + 1.7L',d:1.4,l:1.7,e:0}];if(Math.abs(c.PE)+Math.abs(c.MEx)+Math.abs(c.MEy)>0)for(const s of [1,-1]){serv.push({name:`S · D + L ${s>0?'+':'−'} E`,d:1,l:1,e:s},{name:`S · D ${s>0?'+':'−'} E`,d:1,l:0,e:s});ult.push({name:`U · 1.25(D+L) ${s>0?'+':'−'} E`,d:1.25,l:1.25,e:s},{name:`U · 0.9D ${s>0?'+':'−'} E`,d:.9,l:0,e:s});}return {service:serv.map(co=>load(c,co)),ultimate:ult.map(co=>load(c,co))};}
+function feasible(c,l){if(l.N<=EPS)throw Error('Sin equilibrio: resultante vertical nula o de levantamiento.');if(Math.abs(l.Tx/l.N)>=c.L/2-1e-9||Math.abs(l.Ty/l.N)>=c.B/2-1e-9)throw Error('Sin equilibrio por compresión: la resultante está fuera de la base o sobre su borde.');}
+function rigid(c,l){
+  feasible(c,l);const area=c.L*c.B,rect=bounds(c),f=[l.N,l.Tx,l.Ty];let a=[l.N/area,12*l.Tx/(area*c.L*c.L),12*l.Ty/(area*c.B*c.B)],poly,err=1,it=0;
+  function state(v){const p=clip(rectPoly(rect),v),q=(x,y)=>v[0]+v[1]*x+v[2]*y,r=[0,0,0],H=zeros(9);for(let i=0;i<3;i++){r[i]=polyInt(p,(x,y)=>q(x,y)*[1,x,y][i])-f[i];for(let j=0;j<3;j++)H[i*3+j]=polyInt(p,(x,y)=>[1,x,y][i]*[1,x,y][j]);}return {p,r,H,energy:.5*polyInt(p,(x,y)=>q(x,y)**2)-dot(v,f)};}
+  for(;it<80;it++){const st=state(a);err=Math.max(Math.abs(st.r[0])/l.N,Math.abs(st.r[1])/(l.N*c.L),Math.abs(st.r[2])/(l.N*c.B));poly=st.p;if(err<1e-10)break;const da=solveSPD(st.H,st.r);let t=1;for(let ls=0;ls<35;ls++){const next=a.map((v,i)=>v-t*da[i]);if(state(next).energy<=st.energy-1e-4*t*dot(st.r,da)+1e-9){a=next;break;}t*=.5;}}
+  if(err>1e-7)throw Error('No convergió el contacto rígido.');
+  const q=(x,y)=>Math.max(0,a[0]+a[1]*x+a[2]*y),integrate=(r,fn=()=>1)=>{const rr=intersect(rect,r);if(rr[1]<=rr[0]||rr[3]<=rr[2])return 0;return polyInt(clip(rectPoly(rr),a),(x,y)=>q(x,y)*fn(x,y));};
+  return {method:'rigid',load:l,q,integrate,poly,area:polyInt(poly,()=>1),qmax:Math.max(...rectPoly(rect).map(p=>q(...p))),qmin:Math.min(...rectPoly(rect).map(p=>q(...p))),residual:err,iterations:it+1,kern:6*Math.abs(l.Tx/l.N)/c.L+6*Math.abs(l.Ty/l.N)/c.B,ex:l.Tx/l.N,ey:l.Ty/l.N,wmax:null,wmin:null};
+}
+function legendre(p,x){const v=zeros(p+1),d=zeros(p+1),dd=zeros(p+1);v[0]=1;if(p){v[1]=x;d[1]=1;}for(let n=2;n<=p;n++){v[n]=((2*n-1)*x*v[n-1]-(n-1)*v[n-2])/n;d[n]=((2*n-1)*(v[n-1]+x*d[n-1])-(n-1)*d[n-2])/n;dd[n]=((2*n-1)*(2*d[n-1]+x*dd[n-1])-(n-1)*dd[n-2])/n;}return {v,d,dd};}
+function meanLegendre(p,a,b){const A=legendre(p+1,a).v,B=legendre(p+1,b).v,v=zeros(p+1);v[0]=1;for(let n=1;n<=p;n++)v[n]=((B[n+1]-B[n-1])-(A[n+1]-A[n-1]))/((2*n+1)*(b-a));return v;}
+function createPlate(c){
+  const mindlin=c.theory==='mindlin',gcol=geometry(c).col,divisions=Math.max(2,Math.round(c.order/2));
+  const breaks=(length,lo,hi)=>{let b=Array.from(new Set([-length/2,lo,0,hi,length/2].map(x=>+x.toFixed(12)))).sort((a,b)=>a-b);for(let k=2;k<divisions;k++){let a=0;for(let i=1;i<b.length-1;i++)if(b[i+1]-b[i]>b[a+1]-b[a]+1e-10)a=i;const mid=(b[a]+b[a+1])/2;b=Array.from(new Set(b.concat([mid,-mid]).map(x=>+x.toFixed(12)))).sort((a,b)=>a-b);}return b;};
+  const bx=breaks(c.L,gcol[0],gcol[1]),by=breaks(c.B,gcol[2],gcol[3]);
+  function spline(b,p){const knots=[...Array(p).fill(b[0]),...b,...Array(p).fill(b.at(-1))],n=knots.length-p-1;
+    function at(x){x=Math.max(b[0],Math.min(b.at(-1),x));const levels=[];levels[0]=Array.from({length:knots.length-1},(_,i)=>x>=knots[i]&&x<knots[i+1]?1:0);if(x===b.at(-1))levels[0][n-1]=1;
+      for(let k=1;k<=p;k++)levels[k]=Array.from({length:knots.length-k-1},(_,i)=>{const a=knots[i+k]-knots[i],d=knots[i+k+1]-knots[i+1];return (a?(x-knots[i])/a*levels[k-1][i]:0)+(d?(knots[i+k+1]-x)/d*levels[k-1][i+1]:0);});
+      const deriv=(k,i)=>{const a=knots[i+k]-knots[i],d=knots[i+k+1]-knots[i+1];return (a?k/a*levels[k-1][i]:0)-(d?k/d*levels[k-1][i+1]:0);};
+      return {v:levels[p],d:Array.from({length:n},(_,i)=>deriv(p,i)),dd:Array.from({length:n},(_,i)=>{const a=knots[i+p]-knots[i],d=knots[i+p+1]-knots[i+1];return (a?p/a*deriv(p-1,i):0)-(d?p/d*deriv(p-1,i+1):0);})};
+    }return {n,at};
+  }
+  const x3=spline(bx,3),y3=spline(by,3),x2=spline(bx,2),y2=spline(by,2),modes=[];
+  for(let i=0;i<x3.n;i++)for(let j=0;j<y3.n;j++)modes.push([i,j,0]);
+  if(mindlin){for(let i=0;i<x2.n;i++)for(let j=0;j<y3.n;j++)modes.push([i,j,1]);for(let i=0;i<x3.n;i++)for(let j=0;j<y2.n;j++)modes.push([i,j,2]);}
+  const m=modes.length,D=c.Ec*1000*c.eta*c.h**3/(12*(1-c.nu*c.nu)),S=mindlin?5/6*c.Ec*1000*c.eta/(2*(1+c.nu))*c.h:0;
+  function basis(x,y){const X=x3.at(x),Y=y3.at(y),A=mindlin?x2.at(x):null,B=mindlin?y2.at(y):null,v=zeros(m),xx=zeros(m),yy=zeros(m),xy=zeros(m),sx=zeros(m),sy=zeros(m),nonzero=[];
+    modes.forEach(([i,j,f],k)=>{if(f===0){v[k]=X.v[i]*Y.v[j];if(mindlin){sx[k]=X.d[i]*Y.v[j];sy[k]=X.v[i]*Y.d[j];}else{xx[k]=X.dd[i]*Y.v[j];yy[k]=X.v[i]*Y.dd[j];xy[k]=X.d[i]*Y.d[j];}}else if(f===1){xx[k]=A.d[i]*Y.v[j];xy[k]=A.v[i]*Y.d[j]/2;sx[k]=-A.v[i]*Y.v[j];}else{yy[k]=X.v[i]*B.d[j];xy[k]=X.d[i]*B.v[j]/2;sy[k]=-X.v[i]*B.v[j];}if(v[k]||xx[k]||yy[k]||xy[k]||sx[k]||sy[k])nonzero.push(k);});return {v,xx,yy,xy,sx,sy,nonzero};
+  }
+  function integrate(rect,fn){const xs=bx.filter(x=>x>rect[0]&&x<rect[1]),ys=by.filter(y=>y>rect[2]&&y<rect[3]),X=[rect[0],...xs,rect[1]],Y=[rect[2],...ys,rect[3]],g=gauss(4);for(let i=1;i<X.length;i++)for(let j=1;j<Y.length;j++)for(const [u,wu]of g)for(const[v,wv]of g){const x=(X[i]+X[i-1])/2+u*(X[i]-X[i-1])/2,y=(Y[j]+Y[j-1])/2+v*(Y[j]-Y[j-1])/2;fn(x,y,wu*wv*(X[i]-X[i-1])*(Y[j]-Y[j-1])/4);}}
+  const K=zeros(m*m);integrate(bounds(c),(x,y,w)=>{const b=basis(x,y);for(const i of b.nonzero)for(const j of b.nonzero){if(j>i)continue;const v=w*(D*(b.xx[i]*b.xx[j]+b.yy[i]*b.yy[j]+c.nu*(b.xx[i]*b.yy[j]+b.yy[i]*b.xx[j])+2*(1-c.nu)*b.xy[i]*b.xy[j])+S*(b.sx[i]*b.sx[j]+b.sy[i]*b.sy[j]));K[i*m+j]+=v;if(i!==j)K[j*m+i]+=v;}});
+  const nx=c.mesh,ny=Math.max(8,Math.min(36,Math.round(c.mesh*c.B/c.L))),dx=c.L/nx,dy=c.B/ny,cells=[];
+  // Cell averages use exact piecewise cubic integration, split at spline knots.
+  function means(s,b,a,z){const out=zeros(s.n),cut=[a,...b.filter(x=>x>a&&x<z),z];for(let j=1;j<cut.length;j++)for(const [t,w]of gauss(2)){const v=s.at((cut[j]+cut[j-1])/2+t*(cut[j]-cut[j-1])/2).v;for(let k=0;k<v.length;k++)out[k]+=v[k]*w*(cut[j]-cut[j-1])/(2*(z-a));}return out;}
+  for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const x=-c.L/2+(i+.5)*dx,y=-c.B/2+(j+.5)*dy,X=means(x3,bx,x-dx/2,x+dx/2),Y=means(y3,by,y-dy/2,y+dy/2);cells.push({x,y,A:dx*dy,r:[x-dx/2,x+dx/2,y-dy/2,y+dy/2],v:Float64Array.from(modes,([i,j,f])=>f===0?X[i]*Y[j]:0)});}
+  const edges=[];for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const k=j*nx+i;if(i+1<nx)edges.push([k,k+1,dy/dx]);if(j+1<ny)edges.push([k,k+nx,dx/dy]);}
+  return {m,D,S,K,basis,cells,edges,nx,ny,dx,dy,integrate,modes,breaks:[bx,by],formulation:'local-cubic-splines'};
+}
+function plateLoad(c,l,p){const f=zeros(p.m);const add=(r,fn)=>p.integrate(r,(x,y,w)=>{const b=p.basis(x,y),v=fn(x,y)*w;for(const k of b.nonzero)f[k]+=v*b.v[k];});add(bounds(c),()=>l.w);add(l.col,(x,y)=>l.P/(c.cx*c.cy)+12*l.My*(x-l.x)/(c.cy*c.cx**3)+12*l.Mx*(y-l.y)/(c.cx*c.cy**3));return f;}
+function elastic(c,l,method,p=createPlate(c)){
+  feasible(c,l);const {m,K,cells,edges}=p,n=cells.length,f=plateLoad(c,l,p),gp=method==='pasternak'?c.Gp:0;let active=new Uint8Array(n).fill(1),a,u,r,iterations=0,last='';
+  function solveActive(){const map=new Int32Array(n).fill(-1);let size=m;if(gp>0)for(let i=0;i<n;i++)if(!active[i])map[i]=size++;
+    const H=zeros(size*size),rhs=zeros(size);for(let i=0;i<m;i++){rhs[i]=f[i];for(let j=0;j<m;j++)H[i*size+j]=K[i*m+j];}
+    const rep=i=>active[i]?Array.from(cells[i].v,(v,k)=>[k,v]).filter(t=>Math.abs(t[1])>1e-15):(gp>0?[[map[i],1]]:[]);
+    const reps=cells.map((_,i)=>rep(i));const outer=(v,k)=>{for(const [i,x] of v)for(const [j,y] of v)H[i*size+j]+=k*x*y;};
+    for(let i=0;i<n;i++)outer(reps[i],c.ks*cells[i].A);
+    if(gp>0)for(const [i,j,w] of edges){const v=new Map(reps[i]);for(const [k,x] of reps[j])v.set(k,(v.get(k)||0)-x);outer([...v],gp*w);}
+    const z=solveSPD(H,rhs);a=z.slice(0,m);u=zeros(n);for(let i=0;i<n;i++)u[i]=active[i]?dot(cells[i].v,a):(gp>0?z[map[i]]:0);
+    r=u.map((v,i)=>c.ks*cells[i].A*v);if(gp>0)for(const [i,j,w] of edges){const v=gp*w*(u[i]-u[j]);r[i]+=v;r[j]-=v;}
+  }
+  let converged=false;for(;iterations<80;iterations++){solveActive();const next=new Uint8Array(active);let changed=0;for(let i=0;i<n;i++){const gap=u[i]-dot(cells[i].v,a),tolF=l.N*1e-9/n;if(active[i]&&r[i]<-tolF){next[i]=0;changed++;}else if(!active[i]&&gap< -1e-10){next[i]=1;changed++;}}
+    if(!changed){converged=true;break;}const key=Array.from(next).join('');if(key===last)throw Error('El contacto elástico oscila; cambie la resolución y revise la proximidad al vuelco.');last=Array.from(active).join('');active=next;}
+  if(!converged)throw Error('El contacto elástico no convergió; no se emite una verificación.');
+  const qs=r.map((v,i)=>active[i]?Math.max(0,v/cells[i].A):0),ws=cells.map(v=>dot(v.v,a));let N=0,Tx=0,Ty=0,area=0;for(let i=0;i<n;i++){const v=qs[i]*cells[i].A;N+=v;Tx+=v*cells[i].x;Ty+=v*cells[i].y;if(active[i])area+=cells[i].A;}
+  const residual=Math.max(Math.abs(N-l.N)/l.N,Math.abs(Tx-l.Tx)/(l.N*c.L),Math.abs(Ty-l.Ty)/(l.N*c.B));if(residual>2e-5)throw Error('El residuo de equilibrio excede la tolerancia.');
+  const integrate=(rect,fn=()=>1)=>{let s=0;for(let i=0;i<n;i++){const rr=intersect(rect,cells[i].r);if(rr[1]>rr[0]&&rr[3]>rr[2])s+=qs[i]*(rr[1]-rr[0])*(rr[3]-rr[2])*fn((rr[0]+rr[1])/2,(rr[2]+rr[3])/2);}return s;};
+  const q=(x,y)=>qs[Math.min(p.ny-1,Math.max(0,Math.floor((y+c.B/2)/p.dy)))*p.nx+Math.min(p.nx-1,Math.max(0,Math.floor((x+c.L/2)/p.dx)))];
+  const moments=(x,y)=>{const b=p.basis(x,y),xx=dot(b.xx,a),yy=dot(b.yy,a),xy=dot(b.xy,a);return {mx:-p.D*(xx+c.nu*yy),my:-p.D*(yy+c.nu*xx),mxy:-p.D*(1-c.nu)*xy};};
+  return {method,load:l,q,qs,ws,a,active,integrate,moments,area,qmax:Math.max(...qs),qmin:Math.min(...qs),wmax:Math.max(...ws)*1000,wmin:Math.min(...ws)*1000,soilmax:Math.max(...u)*1000,residual,iterations:iterations+1,ex:l.Tx/l.N,ey:l.Ty/l.N,kern:6*Math.abs(l.Tx/l.N)/c.L+6*Math.abs(l.Ty/l.N)/c.B,mesh:[p.nx,p.ny],order:c.order};
+}
+function netIntegral(c,res,rect,fn=()=>1){const rr=intersect(bounds(c),rect);return res.integrate(rr,fn)-quadRect(rr,2,(x,y)=>res.load.w*fn(x,y));}
+function section(c,res,axis,side,at){const r=bounds(c);if(axis==='x')r[side>0?0:1]=at;else r[side>0?2:3]=at;const V=netIntegral(c,res,r),M=netIntegral(c,res,r,(x,y)=>side*((axis==='x'?x:y)-at));return {V,M,at,side,axis};}
+function depths(c){const dbx=c.dbX/1000,dby=c.dbY/1000;return {x:c.h-c.cover-dbx/2-(c.bottom==='y'?dby:0),y:c.h-c.cover-dby/2-(c.bottom==='x'?dbx:0)};}
+function punching(c,res){
+  const ds=depths(c),d=(ds.x+ds.y)/2,l=res.load,b=bounds(c),r=intersect(b,[l.col[0]-d/2,l.col[1]+d/2,l.col[2]-d/2,l.col[3]+d/2]),segments=[];
+  if(r[0]>b[0]+EPS)segments.push([r[0],r[2],r[0],r[3]]);if(r[1]<b[1]-EPS)segments.push([r[1],r[2],r[1],r[3]]);if(r[2]>b[2]+EPS)segments.push([r[0],r[2],r[1],r[2]]);if(r[3]<b[3]-EPS)segments.push([r[0],r[3],r[1],r[3]]);
+  const lineInt=fn=>{let v=0;for(const [x0,y0,x1,y1] of segments){const len=Math.hypot(x1-x0,y1-y0);for(const [t,w] of gauss(3))v+=len*w/2*fn(x0+(t+1)/2*(x1-x0),y0+(t+1)/2*(y1-y0));}return v;};
+  const bo=lineInt(()=>1);if(bo<EPS)return {invalid:true,reason:'Perímetro crítico fuera del alcance; columna o peralte demasiado grandes.'};const xc=lineInt(x=>x)/bo,yc=lineInt((x,y)=>y)/bo;
+  const V=l.P-netIntegral(c,res,r),Tx=l.My+l.P*(l.x-xc)-netIntegral(c,res,r,x=>x-xc),Ty=l.Mx+l.P*(l.y-yc)-netIntegral(c,res,r,(x,y)=>y-yc);
+  // Conservative elastic shear-flow screen: 100% of the net moment transferred by shear.
+  // This is deliberately not advertised as the complete E.060 11.12.6 check.
+  const H=[lineInt(x=>(x-xc)**2),lineInt((x,y)=>(x-xc)*(y-yc)),lineInt((x,y)=>(x-xc)*(y-yc)),lineInt((x,y)=>(y-yc)**2)];let slope;try{slope=solveSPD(H,[Tx,Ty]);}catch(e){return {invalid:true,reason:'Perímetro degenerado.'};}
+  let vmax=0;for(const seg of segments)for(const p of [[seg[0],seg[1]],[seg[2],seg[3]]])vmax=Math.max(vmax,Math.abs(V/bo+slope[0]*(p[0]-xc)+slope[1]*(p[1]-yc))/d/1000);
+  const alpha=segments.length===4?40:segments.length===3?30:20,beta=Math.max(c.cx,c.cy)/Math.min(c.cx,c.cy),vc=Math.min(.17*(1+2/beta),.083*(alpha*d/bo+2),.33)*Math.sqrt(c.fc),cap=.85*vc;
+  const momentRelevant=Math.abs(Tx)+Math.abs(Ty)>1e-5;
+  return {V,Tx,Ty,bo,d,xc,yc,vmax,cap,ratio:vmax/cap,segments,r,review:momentRelevant,average:Math.abs(V)/(bo*d*1000),name:l.name};
+}
+function reinforcementMoments(m){return {bottomX:Math.max(0,m.mx+Math.abs(m.mxy)),bottomY:Math.max(0,m.my+Math.abs(m.mxy)),topX:Math.max(0,-m.mx+Math.abs(m.mxy)),topY:Math.max(0,-m.my+Math.abs(m.mxy))};}
+function localMomentField(c,res){if(!res.moments)return null;const points=[];for(let j=0;j<=32;j++)for(let i=0;i<=32;i++){const x=-c.L/2+c.L*i/32,y=-c.B/2+c.B*j/32,m=res.moments(x,y);points.push({x,y,...m,...reinforcementMoments(m)});}return {nx:33,ny:33,points};}
+function demands(c,res){const l=res.load,d=depths(c),out={x:{bottom:0,top:0,V:0,M:0,side:1},y:{bottom:0,top:0,V:0,M:0,side:1}};
+  for(const axis of ['x','y']){const k=axis==='x'?0:2,width=axis==='x'?c.B:c.L,lim=axis==='x'?c.L/2:c.B/2;for(const side of [-1,1]){const face=l.col[k+(side>0?1:0)],s=section(c,res,axis,side,face);for(const [key,value] of [['bottom',s.M/width],['top',-s.M/width]])if(value>out[axis][key]){out[axis][key]=value;out[axis][key+'Trace']={source:'section',axis,coordinate:face,width,total:s.M,value,case:l.name};}if(Math.abs(s.M)>Math.abs(out[axis].M)){out[axis].M=s.M;out[axis].side=side;}const cut=face+side*d[axis];if(Math.abs(cut)<lim)out[axis].V=Math.max(out[axis].V,Math.abs(section(c,res,axis,side,cut).V));}}
+  out.x.globalBottom=out.x.bottom;out.y.globalBottom=out.y.bottom;
+  out.localField=localMomentField(c,res);
+  out.x.localBottom=0;out.x.localTop=0;out.y.localBottom=0;out.y.localTop=0;
+  // Design demand = section at column face (E.060 15.4). The local plate peak is informative only and does not feed the design demand.
+  if(out.localField)for(const point of out.localField.points)for(const axis of ['x','y'])for(const face of ['bottom','top']){const value=point[face+axis.toUpperCase()],key='local'+face[0].toUpperCase()+face.slice(1);if(value>out[axis][key]){out[axis][key]=value;out[axis][key+'Trace']={source:'plate',...point,value,case:l.name};}}
+
+  out.punch=punching(c,res);return out;
+}
+function hookGeometry(db){ // db en mm; Tabla 25.3.1 (ACI 318 / E.060), ganchos estándar
+  const bendDiam=db<=25?6*db:(db<=36?8*db:10*db);
+  return {bendDiam,ext90:12*db,ext180:Math.max(4*db,65)};
+}
+function steel(c,axis,mu,face='bottom'){
+  const d0=depths(c)[axis],d=d0*1000,db=axis==='x'?c.dbX:c.dbY,spacing=axis==='x'?c.spX:c.spY,width=axis==='x'?c.B:c.L,length=axis==='x'?c.L:c.B;
+  // Same mirrored layer order for optional top reinforcement; no top bars are assumed installed.
+  const rhoMin=c.fy<420?.002:.0018,min=rhoMin*1000*c.h*1000,beta=Math.max(.65,.85-.05*Math.max(0,c.fc-28)/7),rhob=.85*beta*c.fc/c.fy*(.003/(.003+c.fy/200000)),max=.75*rhob*1000*d;
+  const term=2*mu*1e6/(.9*.85*c.fc*1000*d*d),calc=term>=1?Infinity:(.85*c.fc*1000*d/c.fy)*(1-Math.sqrt(Math.max(0,1-term))),req=Math.max(calc,face==='bottom'||mu>1e-6?min:0);
+  const clearWidth=width*1000-2*c.cover*1000-db,n=Math.max(0,Math.ceil(clearWidth/spacing)+1),actual=n>1?clearWidth/(n-1):Infinity,provided=face==='bottom'||c.topBars?Math.PI*db*db/4*1000/actual:0,a=provided*c.fy/(.85*c.fc*1000),capacity=.9*provided*c.fy*(d-a/2)/1e6;
+  const maxSpacing=Math.min(3*c.h*1000,400),clearMin=Math.max(db,25,4/3*c.aggregate),spacingOK=actual<=maxSpacing&&actual-db>=clearMin,cb=Math.min(c.cover*1000+db/2,actual/2),ld=Math.max(300,c.fy/(1.1*Math.sqrt(c.fc))*(db<=19?.8:1)*(face==='top'&&d0>.3?1.3:1)/Math.min(cb/db,2.5)*db);
+  // Gancho estándar en tracción (familia de fórmula E.060/ACI anterior a 2019; NO es la ecuación 25.4.3.1 de ACI 318-19+, que usa db^1.5 y factores de confinamiento distintos).
+  const sideCoverOK=c.cover*1000>=65,ldh=Math.max(.24*c.fy*db/Math.sqrt(c.fc)*(sideCoverOK?.7:1),Math.max(8*db,150)),hookGeom=hookGeometry(db);
+  const g=geometry(c),cl=axis==='x'?g.col.slice(0,2):g.col.slice(2,4),available=[];
+  for(let k=0;k<2;k++){const overhang=k===0?cl[k]+length/2:length/2-cl[k];available.push(overhang>EPS?Math.max(0,Math.min(cl[k]+length/2-c.cover,length/2-cl[k]-c.cover))*1000:Infinity);}
+  const needsHookSide=available.map(av=>av<ld),hookOKSide=available.map((av,i)=>needsHookSide[i]?av>=ldh:true);
+  const needsHook=needsHookSide.some(Boolean),hookSufficient=needsHook&&hookOKSide.every(Boolean);
+  return {mu,d:d0,calc:calc/100,req:req/100,min:min/100,max:max/100,provided:provided/100,capacity,ratio:capacity>0?mu/capacity:(mu>1e-6?Infinity:0),n,actual,spacingOK,ld,ldh,hookGeom,needsHook,needsHookSide,hookSufficient,available,ductile:req<=max&&provided<=max,face,axis};
+}
+function distribution(c,axis){const isShort=axis==='x'?c.L<c.B:c.B<c.L;if(!isShort)return {factor:1,band:axis==='x'?c.B:c.L,gamma:1,clipped:false};const g=geometry(c),width=axis==='x'?c.B:c.L,length=axis==='x'?c.L:c.B,center=axis==='x'?g.y:g.x,band=Math.min(width/2,center+length/2)-Math.max(-width/2,center-length/2),gamma=2/(width/length+1);return {factor:Math.max(1,gamma*width/band,(1-gamma)*width/(width-band)),band,gamma,clipped:band<length-1e-9};}
+function analyze(c,onProgress=()=>{}){validate(c);const loads=combinations(c),p=createPlate(c),result={config:c,loads,models:{},errors:[]};let count=0;
+  for(const method of ['rigid','winkler','pasternak']){const model={service:[],ultimate:[],failures:[]};for(const stage of ['service','ultimate'])for(const l of loads[stage]){onProgress(method,l.name,++count);try{const r=method==='rigid'?rigid(c,l):elastic(c,l,method,p);if(stage==='ultimate')r.demands=demands(c,r);model[stage].push(r);}catch(e){model.failures.push({stage,name:l.name,message:e.message});}}
+    model.envelope={x:{bottom:0,globalBottom:0,top:0,V:0,localBottom:0,localTop:0},y:{bottom:0,globalBottom:0,top:0,V:0,localBottom:0,localTop:0},punch:null,punchInvalid:false};for(const r of model.ultimate){for(const axis of ['x','y'])for(const key of ['bottom','globalBottom','top','V','localBottom','localTop'])if(r.demands[axis][key]>model.envelope[axis][key]){model.envelope[axis][key]=r.demands[axis][key];model.envelope[axis][key+'Case']=r.load.name;model.envelope[axis][key+'Trace']=r.demands[axis][key+'Trace'];}const pu=r.demands.punch;if(pu.invalid)model.envelope.punchInvalid=true;if(!pu.invalid&&(!model.envelope.punch||pu.ratio>model.envelope.punch.ratio))model.envelope.punch=pu;}
+    for(const axis of ['x','y']){const en=model.envelope[axis];en.steel=steel(c,axis,en.bottom);en.distribution=distribution(c,axis);en.steel.req=Math.max(en.steel.req,steel(c,axis,en.globalBottom).req*en.distribution.factor);en.steel.ductile=en.steel.ductile&&en.steel.req<=en.steel.max;en.topSteel=steel(c,axis,en.top,'top');en.shearCap=.85*.17*Math.sqrt(c.fc)*(axis==='x'?c.B:c.L)*depths(c)[axis]*1000;}
+    result.models[method]=model;
+  }return result;
+}
+const defaults={type:'center',L:3,B:2.5,h:.6,cx:.5,cy:.4,PD:800,PL:300,PE:50,MDx:40,MDy:25,MLx:20,MLy:15,MEx:80,MEy:60,fc:21,fy:420,Ec:21538,nu:.2,eta:1,ks:50000,Gp:1000,qa:350,qaType:'gross',overburden:0,sett:25,gamma:24,fill:0,cover:.075,dbX:16,dbY:16,spX:150,spY:150,bottom:'x',aggregate:19,mesh:18,order:10,theory:'mindlin',allowPartial:false,topBars:false};
+const api={reinforcementMoments,localMomentField,defaults,validate,geometry,depths,load,combinations,rigid,createPlate,plateLoad,elastic,analyze,demands,punching,steel,distribution,section,netIntegral,quadRect,solveSPD,gauss};
+if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ZapataEngine=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script>
+<script>/* Display units only. Mechanical engine retains kN, m, kPa / MPa / mm. */
+(function(root){
+  'use strict';
+  const kgfPerKN=1000/9.80665;
+  const fields={};
+  const add=(keys,factor,unit)=>keys.split(' ').forEach(k=>fields[k]={factor,unit});
+  add('L B',1,'m');
+  add('h cover cx cy',100,'cm');
+  add('PD PL PE',kgfPerKN/1000,'tonf');
+  add('MDx MDy MLx MLy MEx MEy',kgfPerKN/1000,'tonf·m');
+  add('gamma',kgfPerKN,'kgf/m³');
+  add('fill',kgfPerKN,'kgf/m²');
+  add('qa overburden',kgfPerKN/10000,'kgf/cm²');
+  add('ks',kgfPerKN/1e6,'kgf/cm³');
+  add('Gp',kgfPerKN/100,'kgf/cm');
+  add('fc fy Ec',kgfPerKN/10,'kgf/cm²');
+  add('sett dbX dbY spX spY aggregate',.1,'cm');
+  const toUI=(key,value)=>typeof value==='number'?value*(fields[key]?.factor??1):value;
+  const toSI=(key,value)=>typeof value==='number'?value/(fields[key]?.factor??1):value;
+  const configToUI=c=>Object.fromEntries(Object.entries(c).map(([k,v])=>[k,toUI(k,v)]));
+  const configToSI=c=>Object.fromEntries(Object.entries(c).map(([k,v])=>[k,toSI(k,v)]));
+  const api={fields,toUI,toSI,configToUI,configToSI,force:v=>v==null?v:v*kgfPerKN,pressure:v=>v==null?v:v*kgfPerKN/10000,stress:v=>v==null?v:v*kgfPerKN/10,mmToCm:v=>v==null?v:v/10,kgfPerKN};
+  if(typeof module!=='undefined'&&module.exports)module.exports=api;
+  root.ZapataUnits=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script>
+<script>'use strict';
+const E=ZapataEngine,$=id=>document.getElementById(id),methods=['rigid','winkler','pasternak'],names={rigid:'Rígido',winkler:'Winkler',pasternak:'Pasternak'},colors={rigid:'#356ac3',winkler:'#bb6419',pasternak:'#087f8c'};
+const U=ZapataUnits;
+const fmt=(v,n=2)=>v===null||v===undefined?'—':Number.isFinite(v)&&Math.abs(v)<1e90?v.toLocaleString('es-PE',{minimumFractionDigits:n,maximumFractionDigits:n}):'Fuera de rango';
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const badge=(text,kind='')=>`<span class="badge ${kind}">${text}</span>`;
+let current=null,worker=null,timer=null,generation=0,lastConvergence=null;
+function setInputs(c){for(const[k,v]of Object.entries(E.defaults)){const el=$(k);if(!el)continue;if(el.type==='checkbox')el.checked=Boolean(c[k]??v);else el.value=U.toUI(k,c[k]??v);}geometryHint();}
+function readInputs(){const c={};for(const[k,v]of Object.entries(E.defaults)){const el=$(k);c[k]=el.type==='checkbox'?el.checked:typeof v==='number'?U.toSI(k,Number(el.value)):el.value;if(typeof v==='number'&&el.value.trim()==='')throw Error(`Falta el dato ${k}.`);}return c;}
+function geometryHint(){const type=$('type').value;$('geometryHint').textContent=type==='center'?'Columna centrada geométricamente. Los momentos aplicados pueden desplazar la resultante y producir contacto parcial.':'Columna al borde negativo de la zapata. Aumentar la dimensión hacia el interior no garantiza recuperar contacto completo. No se supone una viga centradora.';}
+function clearResults(message){$('results').hidden=true;$('print').disabled=true;current=null;lastConvergence=null;$('status').textContent=message;}
+function cancel(){generation++;if(worker){worker.terminate();worker=null;}$('progress').hidden=true;$('refine').disabled=false;}
+function workerMain(){
+  const E=ZapataEngine;
+  function augment(r){const c=r.config;for(const m of Object.values(r.models))for(const stage of ['service','ultimate'])for(const s of m[stage]){
+    if(stage==='service'){const nx=40,ny=32,values=[];for(let j=0;j<ny;j++)for(let i=0;i<nx;i++)values.push(s.q(-c.L/2+(i+.5)*c.L/nx,-c.B/2+(j+.5)*c.B/ny));s.map={nx,ny,values};}
+    else {s.profiles={};for(const axis of ['x','y']){const len=axis==='x'?c.L:c.B,pts=[];for(let k=0;k<=60;k++){const t=-len/2+len*k/60,rect=[-c.L/2,c.L/2,-c.B/2,c.B/2];rect[axis==='x'?1:3]=t;const l=s.load,col=[Math.max(rect[0],l.col[0]),Math.min(rect[1],l.col[1]),Math.max(rect[2],l.col[2]),Math.min(rect[3],l.col[3])],density=(x,y)=>l.P/(c.cx*c.cy)+12*l.My*(x-l.x)/(c.cy*c.cx**3)+12*l.Mx*(y-l.y)/(c.cx*c.cy**3),lever=(x,y)=>t-(axis==='x'?x:y);const V=E.netIntegral(c,s,rect)-E.quadRect(col,3,density),M=E.netIntegral(c,s,rect,lever)-E.quadRect(col,3,(x,y)=>density(x,y)*lever(x,y));pts.push({t,V,M});}s.profiles[axis]=pts;}}
+  }return JSON.parse(JSON.stringify(r,(k,v)=>typeof v==='function'?undefined:typeof v==='number'&&!Number.isFinite(v)?(v>0?1e100:-1e100):v));}
+  self.onmessage=e=>{try{const start=performance.now(),r=E.analyze(e.data.config,(method,name,i)=>self.postMessage({progress:`${method} · ${name}`}));const data=augment(r);self.postMessage({done:data,ms:performance.now()-start});}catch(err){self.postMessage({error:err.message});}};
+}
+function launch(c,baseline=null){cancel();const id=generation;$('error').hidden=true;$('results').hidden=true;$('print').disabled=true;$('progress').hidden=false;$('status').textContent='Resolviendo placa, suelo y contacto…';$('refine').disabled=true;
+  const source=$('engine-source').textContent+'\n('+workerMain.toString()+')();',url=URL.createObjectURL(new Blob([source],{type:'text/javascript'}));worker=new Worker(url);URL.revokeObjectURL(url);
+  worker.onmessage=event=>{if(id!==generation)return;const data=event.data;if(data.progress){$('status').textContent=`Calculando ${data.progress}`;return;}worker.terminate();worker=null;$('progress').hidden=true;$('refine').disabled=false;if(data.error){showError(data.error);return;}current=data.done;lastConvergence=baseline?compare(baseline,current):null;$('status').textContent=`Calculado · ${fmt(data.ms/1000,1)} s · ${c.mesh} celdas X / nivel de placa ${c.order} · ${new Date().toLocaleTimeString('es-PE')}`;populateCases();render();};
+  worker.onerror=err=>{if(id!==generation)return;cancel();showError(err.message||'No se pudo ejecutar el cálculo en segundo plano.');};worker.postMessage({config:c});
+}
+function showError(message){clearResults('Datos o modelo pendientes de corrección');$('error').textContent=message;$('error').hidden=false;}
+function run(){clearTimeout(timer);cancel();try{if($('system').value!=='isolated')throw Error('El sistema conectado requiere modelar la viga, la segunda zapata y sus acciones. Esta versión compara tres métodos para una zapata aislada; no representa implícitamente una viga centradora.');const c=readInputs();E.validate(c);current=null;lastConvergence=null;launch(c);}catch(e){showError(e.message);}}
+function populateCases(){for(const[select,stage]of [['serviceCase','service'],['ultimateCase','ultimate']]){$(select).innerHTML=current.loads[stage].map((l,i)=>`<option value="${i}">${escapeHtml(l.name)}</option>`).join('');}}
+function caseResult(method,stage,index){const name=current.loads[stage][index]?.name;return current.models[method][stage].find(r=>r.load.name===name);}
+function failureText(model){return model.failures.map(f=>`${f.name}: ${f.message}`).join(' ');}
+function contact(r,c){return r.area/(c.L*c.B)>.99999?'Contacto completo':'Contacto parcial';}
+function diagnostic(){const c=current.config,failed=methods.flatMap(k=>current.models[k].failures.map(f=>`${names[k]} · ${f.name}: ${f.message}`)),partial=methods.some(k=>current.models[k].service.some(r=>r.area<c.L*c.B*.99999)),over=methods.some(k=>current.models[k].service.some(r=>r.qmax-(c.qaType==='net'?c.overburden:0)>c.qa)),thin=Math.min(c.L,c.B)/c.h;
+  const messages=[];let title='Análisis completado · revise las condiciones de diseño';if(failed.length){title='Hay combinaciones sin una solución válida';messages.push(...failed);}if(partial){title=failed.length?title:'El contacto parcial gobierna al menos una combinación de servicio';messages.push(c.allowPartial?'Se ha declarado un criterio para evaluar contacto parcial. Compruebe área comprimida, presión y giros; esta declaración no aprueba el diseño.':'No se ha declarado un criterio que admita contacto parcial. El cálculo muestra el equilibrio posible, pero no emite conformidad de contacto.');if(c.type!=='center')messages.push('Agrandar la zapata hacia el interior no garantiza corregir esta condición. Evalúe una viga centradora, una zapata combinada u otra solución de cimentación.');}if(over)messages.push('La presión admisible se supera en al menos un modelo o combinación. Consulte la envolvente de servicio.');
+  if(thin<10&&c.theory==='kirchhoff')messages.push(`Relación min(L,B)/h = ${fmt(thin,1)}: se seleccionó placa delgada. Contraste la deformación por cortante con la opción Mindlin–Reissner o con un modelo 3D.`);
+  if(thin<3)messages.push('La geometría es muy gruesa respecto a la base. La teoría de placa no representa por sí sola las regiones de discontinuidad; contraste mediante un modelo 3D o bielas y tirantes.');
+  messages.push(`Placa seleccionada: ${c.theory==='mindlin'?'Mindlin–Reissner, con cortante transversal':'Kirchhoff–Love, sin cortante transversal'}. La precisión de los esfuerzos locales debe comprobarse por refinamiento.`);
+  messages.push('No se emite un “diseño completo”: permanecen fuera del alcance la interfaz columna–zapata, estabilidad horizontal y asentamientos geotécnicos de largo plazo.');
+  $('diagnosis').className='notice '+(failed.length?'error':'warn');$('diagnosis').innerHTML=`<h3>${title}</h3><ul class="small">${messages.map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul>`;
+}
+function eccentricityMarkup(c,l){
+  const title=`<h3>Excentricidad · ${escapeHtml(l.name)}</h3>`;
+  if(!(l.N>0))return title+badge('Sin resultante vertical de compresión','bad')+'<p>No corresponde verificar e = M/N ni el núcleo central.</p>';
+  const ex=l.Tx/l.N,ey=l.Ty/l.N,ix=6*Math.abs(ex)/c.L,iy=6*Math.abs(ey)/c.B,index=ix+iy,full=index<=1+1e-10,outside=Math.abs(ex)>=c.L/2||Math.abs(ey)>=c.B/2;
+  return title+`<div class="table-wrap"><table class="results"><thead><tr><th>Dirección</th><th>Excentricidad con signo</th><th>Límite del núcleo</th><th>Comparación individual</th></tr></thead><tbody><tr><td>X · eₓ = Mᵧ,total/N</td><td>${fmt(100*ex,3)} cm</td><td>L/6 = ${fmt(100*c.L/6,3)} cm</td><td>${badge(ix<=1+1e-10?'|eₓ| ≤ L/6':'|eₓ| > L/6',ix<=1+1e-10?'ok':'warn')}</td></tr><tr><td>Y · eᵧ = Mₓ,total/N</td><td>${fmt(100*ey,3)} cm</td><td>B/6 = ${fmt(100*c.B/6,3)} cm</td><td>${badge(iy<=1+1e-10?'|eᵧ| ≤ B/6':'|eᵧ| > B/6',iy<=1+1e-10?'ok':'warn')}</td></tr></tbody></table></div><p><strong>Verificación biaxial: 6|eₓ|/L + 6|eᵧ|/B = ${fmt(index,4)} ${full?'≤':'>'} 1</strong> · ${badge(full?'Cumple contacto completo (rígido)':'No cumple contacto completo (rígido)',full?'ok':'warn')}</p><p class="small">Se usan N y los momentos totales de esta misma combinación, incluidos la posición de la columna y los pesos considerados. Con momentos en ambos ejes, deben cumplir conjuntamente: las dos comparaciones individuales no bastan. Este criterio corresponde al modelo rígido; Winkler y Pasternak determinan su contacto con la deformación calculada.</p>`+(outside?`<p>${badge('Sin equilibrio con presión de compresión distribuida','bad')} La resultante está en el borde o fuera de la base.</p>`:!full?'<p class="small">Superar el núcleo significa pérdida de contacto completo; el análisis debe verificar contacto parcial, presiones y resistencia. Por sí solo, este resultado no demuestra que se necesite una viga de conexión.</p>':'');
+}
+function renderService(){const c=current.config,idx=+$('serviceCase').value,selected=methods.map(k=>caseResult(k,'service',idx)),max=Math.max(1,...selected.filter(Boolean).map(r=>r.qmax));$('eccentricityCheck').innerHTML=eccentricityMarkup(c,current.loads.service[idx]);$('cards').innerHTML=methods.map((method,i)=>{const r=selected[i];if(!r)return `<div class="card ${method}"><h3>${names[method]}</h3>${badge('Sin resultado válido','bad')}<p class="small">${escapeHtml(failureText(current.models[method]))}</p></div>`;const qtest=r.qmax-(c.qaType==='net'?c.overburden:0),ok=qtest<=c.qa,part=r.area<c.L*c.B*.99999;return `<div class="card ${method}"><h3>${names[method]}</h3>${badge(contact(r,c),part?'warn':'ok')}<div class="metric">${fmt(U.pressure(r.qmax),3)} <span class="unit">kgf/cm² bruta</span></div>${badge(ok?'Presión dentro del límite':'Presión excedida',ok?'ok':'bad')}<dl><dt>q a comparar / adm.</dt><dd>${fmt(U.pressure(qtest),3)} / ${fmt(U.pressure(c.qa),3)}</dd><dt>Área en contacto</dt><dd>${fmt(100*r.area/(c.L*c.B),1)} %</dd><dt>w máx. elástico</dt><dd>${r.wmax===null?'No evaluado':fmt(U.mmToCm(r.wmax),3)+' cm'}</dd><dt>Δw en la base</dt><dd>${r.wmax===null?'No evaluado':fmt(U.mmToCm(r.wmax-r.wmin),3)+' cm'}</dd><dt>Residuo equilibrio</dt><dd>${r.residual.toExponential(1)}</dd><dt>Iteraciones contacto</dt><dd>${r.iterations}</dd></dl></div>`;}).join('');methods.forEach((k,i)=>drawMap($('map-'+k),selected[i],c,max));
+  $('serviceEnvelope').innerHTML='<h3 style="margin-top:20px">Envolvente de servicio</h3><div class="table-wrap"><table class="results"><thead><tr><th>Modelo</th><th>q máxima bruta</th><th>Contacto mínimo</th><th>w máximo elástico</th></tr></thead><tbody>'+methods.map(k=>{const m=current.models[k];if(m.failures.some(f=>f.stage==='service'))return `<tr><td>${names[k]}</td><td colspan="3">${badge('Envolvente incompleta','bad')} No se omiten los casos sin equilibrio.</td></tr>`;const q=m.service.reduce((a,b)=>a.qmax>b.qmax?a:b),a=m.service.reduce((a,b)=>a.area<b.area?a:b),w=k==='rigid'?null:m.service.reduce((a,b)=>a.wmax>b.wmax?a:b);return `<tr><td>${names[k]}</td><td>${fmt(U.pressure(q.qmax),3)} kgf/cm²<small>${escapeHtml(q.load.name)}</small></td><td>${fmt(100*a.area/(c.L*c.B),1)} %<small>${escapeHtml(a.load.name)}</small></td><td>${w?fmt(U.mmToCm(w.wmax),3)+' cm '+badge(w.wmax<=c.sett?'Dentro del límite':'Excedido',w.wmax<=c.sett?'ok':'bad'):'No evaluado'}<small>${w?escapeHtml(w.load.name):'El modelo rígido no predice deformación.'}</small></td></tr>`;}).join('')+'</tbody></table></div>';
+}
+function drawMap(canvas,r,c,max){const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;ctx.clearRect(0,0,W,H);ctx.fillStyle='#f7fafb';ctx.fillRect(0,0,W,H);if(!r){ctx.fillStyle='#ac3344';ctx.font='17px Segoe UI';ctx.fillText('Sin solución para esta combinación',30,150);return;}const scale=Math.min((W-90)/c.L,(H-110)/c.B),ww=c.L*scale,hh=c.B*scale,x0=(W-ww)/2,y0=(H-hh)/2-10,xy=(x,y)=>[x0+(x+c.L/2)*scale,y0+(c.B/2-y)*scale];
+  const {nx,ny,values}=r.map;for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const q=values[j*nx+i],t=Math.min(1,q/max);ctx.fillStyle=q<1e-6?'#fff':`hsl(${240-240*t},80%,50%)`;ctx.fillRect(x0+i*ww/nx,y0+(ny-j-1)*hh/ny,ww/nx+.4,hh/ny+.4);}
+  // Sample labels describe pressure, independently of the contact boundary.
+  ctx.font='bold 12px Segoe UI';ctx.textAlign='center';
+  for(let row=0;row<3;row++)for(let col=0;col<3;col++){
+    const i=Math.min(nx-1,Math.floor((col+.5)*nx/3)),j=Math.min(ny-1,Math.floor((row+.5)*ny/3));
+    const x=x0+(i+.5)*ww/nx,y=y0+(ny-j-.5)*hh/ny,label=fmt(U.pressure(values[j*nx+i]),3);
+    ctx.fillStyle='#ffffffeb';ctx.fillRect(x-27,y-9,54,17);ctx.fillStyle='#172c3a';ctx.fillText(label,x,y+4);
+  }
+  ctx.strokeStyle='#58717f';ctx.lineWidth=1.5;ctx.strokeRect(x0,y0,ww,hh);ctx.strokeStyle='#385360';ctx.setLineDash([5,4]);ctx.beginPath();[[c.L/6,0],[0,c.B/6],[-c.L/6,0],[0,-c.B/6]].forEach((p,i)=>{const a=xy(...p);i?ctx.lineTo(...a):ctx.moveTo(...a);});ctx.closePath();ctx.stroke();ctx.setLineDash([]);
+  const g=E.geometry(c),tl=xy(g.col[0],g.col[3]);ctx.fillStyle='#fff8';ctx.fillRect(...tl,c.cx*scale,c.cy*scale);ctx.lineWidth=2;ctx.strokeStyle='#172c3a';ctx.strokeRect(...tl,c.cx*scale,c.cy*scale);const pt=xy(r.ex,r.ey);
+  // Draw last with a white halo so the resultant remains visible over the column.
+  ctx.strokeStyle='#fff';ctx.lineWidth=4;ctx.fillStyle='#d60035';ctx.beginPath();ctx.arc(...pt,8,0,Math.PI*2);ctx.fill();ctx.stroke();
+  ctx.strokeStyle='#d60035';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(pt[0]-13,pt[1]);ctx.lineTo(pt[0]+13,pt[1]);ctx.moveTo(pt[0],pt[1]-13);ctx.lineTo(pt[0],pt[1]+13);ctx.stroke();
+  ctx.textAlign='left';ctx.font='bold 12px Segoe UI';const lx=Math.min(W-100,Math.max(4,pt[0]+15)),ly=Math.max(16,pt[1]-15);ctx.fillStyle='#fff';ctx.fillRect(lx-3,ly-13,85,18);ctx.fillStyle='#b0002c';ctx.fillText('R: resultante',lx,ly);
+  ctx.textAlign='center';ctx.font='12px Segoe UI';ctx.fillStyle='#172c3a';ctx.fillText('R: ex = '+fmt(r.ex*100,2)+' cm · ey = '+fmt(r.ey*100,2)+' cm',W/2,17);ctx.font='12px Segoe UI';ctx.fillStyle='#526978';ctx.textAlign='center';ctx.fillText(`X →  L = ${fmt(c.L,2)} m`,W/2,y0+hh+24);ctx.save();ctx.translate(x0-18,y0+hh/2);ctx.rotate(-Math.PI/2);ctx.fillText(`Y →  B = ${fmt(c.B,2)} m`,0,0);ctx.restore();
+  const bx=70,by=H-28,bw=W-140;for(let i=0;i<bw;i++){const t=i/bw;ctx.fillStyle=`hsl(${240-240*t},80%,50%)`;ctx.fillRect(bx+i,by,1,8);}ctx.textAlign='left';ctx.fillStyle='#526978';ctx.fillText('0',bx,by-5);ctx.textAlign='right';ctx.fillText(`${fmt(U.pressure(max),3)} kgf/cm²`,bx+bw,by-5);canvas.onmousemove=e=>{const box=canvas.getBoundingClientRect(),px=(e.clientX-box.left)*W/box.width,py=(e.clientY-box.top)*H/box.height,i=Math.floor((px-x0)/ww*nx),j=ny-1-Math.floor((py-y0)/hh*ny);canvas.title=i>=0&&i<nx&&j>=0&&j<ny?`q ≈ ${fmt(U.pressure(values[j*nx+i]),3)} kgf/cm²`:'Fuera de la base';};
+}
+function renderResistance(){const c=current.config,d=E.depths(c),valid=k=>!current.models[k].failures.some(f=>f.stage==='ultimate'),cell=(k,fn)=>valid(k)?fn(current.models[k].envelope):badge('Envolvente incompleta','bad');const rows=[];
+  const stable=lastConvergence&&Object.values(lastConvergence.models).every(s=>!s.invalid&&Math.max(s.pressure,s.contact,s.settlement,s.moments)<=.05);
+  $('resistancePrecision').textContent=stable?'Dos resoluciones presentan variaciones ≤ 5% en los indicadores comparados. Esto no constituye validación independiente ni aprobación del diseño.':'Las comprobaciones siguientes corresponden a la discretización actual. La convergencia de los esfuerzos elásticos aún no está demostrada: no adopte los picos ni el acero de esos modelos como diseño definitivo.';
+  for(const axis of ['x','y']){
+    for(const [face,label,key] of [['bottom','inferior','steel'],['top','superior','topSteel']]){
+      rows.push([`Flexión ${label} ${axis.toUpperCase()} · kgf·m/m`,...methods.map(k=>cell(k,e=>{
+        const s=e[axis][key],mu=e[axis][face],ok=s.ratio<=1&&s.ductile;
+        return `Mu ${fmt(U.force(mu))} / φMn ${fmt(U.force(s.capacity))}<small>Mu/φMn = ${s.capacity>0?fmt(s.ratio,3):mu>1e-6?'∞ (sin capacidad)':'No aplica (0/0)'} · ${escapeHtml(e[axis][face+'Case']||'Sin demanda calculada')}</small>${badge(mu<=1e-6?'Sin demanda calculada':ok?(k==='rigid'?'Resistencia suficiente':'Comparación preliminar suficiente'):'Revisar resistencia',mu<=1e-6?'':ok?'ok':'bad')}`;
+      }))]);
+      rows.push([`Acero ${label} ${axis.toUpperCase()} · cm²/m`,...methods.map(k=>cell(k,e=>{
+        const s=e[axis][key],installed=face==='bottom'||c.topBars,ok=s.provided>=s.req&&s.ductile;
+        return `Req. ${fmt(s.req)} / disp. ${fmt(s.provided)}<small>Mín. ${fmt(s.min)}${face==='top'?' cuando existe demanda':''} · máx. ${fmt(s.max)} · ${installed?`${s.n} barras Ø${fmt(U.mmToCm(axis==='x'?c.dbX:c.dbY))} cm, s real ${fmt(U.mmToCm(s.actual))} cm`:'Sin refuerzo superior declarado'}</small>${badge(ok?'Cantidad suficiente':'Cantidad insuficiente o excesiva',ok?'ok':'bad')}`;
+      }))]);
+    }
+    rows.push([`Cortante ${axis.toUpperCase()} · kgf`,...methods.map(k=>cell(k,e=>`${fmt(U.force(e[axis].V))} / φVc ${fmt(U.force(e[axis].shearCap))}<small>${escapeHtml(e[axis].VCase||'Sin demanda')}</small>${badge(e[axis].V<=e[axis].shearCap?'Resistencia suficiente':'Resistencia insuficiente',e[axis].V<=e[axis].shearCap?'ok':'bad')}`))]);
+  }
+  rows.push(['Punzonamiento · kgf/cm²',...methods.map(k=>cell(k,e=>{const p=e.punch;if(!p||e.punchInvalid)return badge('Perímetro fuera del alcance','warn');return `v máx. ${fmt(U.stress(p.vmax),3)} / φvc ${fmt(U.stress(p.cap),3)}<small>Vu ${fmt(U.force(p.V),1)} kgf · bo ${fmt(p.bo)} m · ${escapeHtml(p.name)}</small>${badge(p.ratio>1?'Resistencia insuficiente':p.review?'Estimación con momento: revisar':'Resistencia suficiente',p.ratio>1?'bad':p.review?'warn':'ok')}`}))]);
+  $('resistance').innerHTML=`<table class="results"><thead><tr><th>Verificación</th>${methods.map(k=>`<th>${names[k]}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map((v,i)=>`<${i?'td':'th'}>${v}</${i?'td':'th'}>`).join('')}</tr>`).join('')}</tbody></table>`;
+  const s=E.steel(c,'x',0),sy=E.steel(c,'y',0);
+  const anchorLine=(label,st)=>{
+    const minAvail=Math.min(...st.available),okStraight=minAvail>=st.ld;
+    if(okStraight)return `Anclaje recto inferior ${label}: ld = ${fmt(U.mmToCm(st.ld))} cm; disponible mínimo = ${fmt(U.mmToCm(minAvail))} cm. Suficiente en las caras verificadas.`;
+    const okHook=minAvail>=st.ldh;
+    return `Anclaje recto inferior ${label}: ld = ${fmt(U.mmToCm(st.ld))} cm; disponible mínimo = ${fmt(U.mmToCm(minAvail))} cm. Insuficiente en recto — se requiere gancho estándar a 90°: ldh = ${fmt(U.mmToCm(st.ldh))} cm, diámetro de doblez ${fmt(U.mmToCm(st.hookGeom.bendDiam))} cm, extensión ${fmt(U.mmToCm(st.hookGeom.ext90))} cm. ${okHook?'El gancho sí cabe en el espacio disponible.':'El gancho tampoco cabe en el espacio disponible: evaluar mayor peralte, dado de anclaje u otra solución.'}`;
+  };
+  const det=[`Peraltes efectivos: dx = ${fmt(d.x*100)} cm; dy = ${fmt(d.y*100)} cm.`,anchorLine('X',s),anchorLine('Y',sy),`Separación y espacio libre: X ${s.spacingOK?'satisfactorios':'no satisfactorios'}; Y ${sy.spacingOK?'satisfactorios':'no satisfactorios'}.`];
+  if(c.topBars){const tx=E.steel(c,'x',1,'top'),ty=E.steel(c,'y',1,'top');det.push(`Anclaje superior: ld X ${fmt(U.mmToCm(tx.ld))} cm; ld Y ${fmt(U.mmToCm(ty.ld))} cm. Incluye factor de barra superior cuando corresponde; verificar con los espacios disponibles.`);}
+  if(Math.abs(c.L-c.B)>1e-6){const axis=c.L<c.B?'x':'y',dist=E.distribution(c,axis);det.push(`Distribución en dirección corta ${axis.toUpperCase()}: se exige ${(100*dist.gamma).toFixed(1)} % del acero total en la franja centrada en la columna. Para una malla uniforme en toda la base, el acero requerido mostrado incluye un factor ${fmt(dist.factor)} sobre el requerido por el momento global; también se comprueba el máximo local. Ancho de franja considerado: ${fmt(dist.band)} m.${dist.clipped?' La franja se recorta en el borde; es una extensión conservadora del criterio de distribución y requiere revisar el detalle.':''}`);}
+  det.push('El anclaje anterior se comprueba en las caras de columna. Los máximos locales interiores, la transferencia por flexión de momento no balanceado y el anclaje de la columna requieren revisión adicional.');
+  $('detailing').innerHTML='<div class="hint"><strong>Detallado y alcance de la armadura</strong><ul>'+det.map(v=>`<li>${escapeHtml(v)}</li>`).join('')+'</ul></div>';
+  drawRebarLayout($('rebarLayout'),c,s,sy);
+}
+function drawRebarLayout(canvas,c,s,sy){
+  const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;ctx.clearRect(0,0,W,H);ctx.fillStyle='#f7fafb';ctx.fillRect(0,0,W,H);
+  const scale=Math.min((W-90)/c.L,(H-110)/c.B),ww=c.L*scale,hh=c.B*scale,x0=(W-ww)/2,y0=(H-hh)/2-5;
+  const xy=(x,y)=>[x0+(x+c.L/2)*scale,y0+(c.B/2-y)*scale];
+  // Contorno de la zapata
+  ctx.strokeStyle='#526978';ctx.lineWidth=1.5;ctx.strokeRect(x0,y0,ww,hh);
+  // Columna
+  const g=E.geometry(c),col=g.col,[cx0,cy0]=xy(col[0],col[3]),[cx1,cy1]=xy(col[1],col[2]);
+  ctx.fillStyle='#e3e9ec';ctx.fillRect(cx0,cy0,cx1-cx0,cy1-cy0);ctx.strokeStyle='#172c3a';ctx.strokeRect(cx0,cy0,cx1-cx0,cy1-cy0);
+  // Franja de distribución (si la zapata es rectangular), en el eje corto
+  if(Math.abs(c.L-c.B)>1e-6){
+    const axisShort=c.L<c.B?'x':'y',dist=E.distribution(c,axisShort);
+    if(axisShort==='x'){ // banda en y, ancho=dist.band, centrada en g.y
+      const [bx0,by0]=xy(-c.L/2,g.y+dist.band/2),[bx1,by1]=xy(c.L/2,g.y-dist.band/2);
+      ctx.fillStyle='rgba(8,127,140,0.08)';ctx.fillRect(bx0,by0,bx1-bx0,by1-by0);
+    } else {
+      const [bx0,by0]=xy(g.x-dist.band/2,c.B/2),[bx1,by1]=xy(g.x+dist.band/2,-c.B/2);
+      ctx.fillStyle='rgba(8,127,140,0.08)';ctx.fillRect(bx0,by0,bx1-bx0,by1-by0);
+    }
+  }
+  // Barras X: corren en X (longitud L), espaciadas en Y (ancho B)
+  function drawBars(axis,st,dashed){
+    const db=axis==='x'?c.dbX:c.dbY,n=st.n;if(!(n>0)||!Number.isFinite(st.actual))return;
+    const half=(n-1)*st.actual/2/1000; // m, mitad del ancho ocupado por las n barras
+    const center=0; // la malla se reparte uniforme en toda la zapata, centrada en la zapata (no en la columna)
+    ctx.setLineDash(dashed?[6,4]:[]);
+    ctx.strokeStyle=axis==='x'?'#356ac3':'#bb6419';ctx.lineWidth=dashed?1.5:2;
+    for(let i=0;i<n;i++){
+      const pos=center-half+i*st.actual/1000;
+      let p0,p1;
+      if(axis==='x'){p0=xy(-c.L/2+c.cover,pos);p1=xy(c.L/2-c.cover,pos);}
+      else{p0=xy(pos,-c.B/2+c.cover);p1=xy(pos,c.B/2-c.cover);}
+      ctx.beginPath();ctx.moveTo(p0[0],p0[1]);ctx.lineTo(p1[0],p1[1]);ctx.stroke();
+      const hookLen=8,hooks=st.needsHookSide||[st.needsHook,st.needsHook]; // por lado; respaldo si faltara el campo
+      if(hooks[0]){ // gancho en el extremo negativo (p0) solamente si ESE lado lo necesita
+        ctx.beginPath();
+        if(axis==='x')ctx.moveTo(p0[0],p0[1]),ctx.lineTo(p0[0],p0[1]-hookLen*Math.sign(pos-center||1));
+        else ctx.moveTo(p0[0],p0[1]),ctx.lineTo(p0[0]+hookLen,p0[1]);
+        ctx.stroke();
+      }
+      if(hooks[1]){ // gancho en el extremo positivo (p1) solamente si ESE lado lo necesita
+        ctx.beginPath();
+        if(axis==='x')ctx.moveTo(p1[0],p1[1]),ctx.lineTo(p1[0],p1[1]-hookLen*Math.sign(pos-center||1));
+        else ctx.moveTo(p1[0],p1[1]),ctx.lineTo(p1[0]+hookLen,p1[1]);
+        ctx.stroke();
+      }
+    }
+  }
+  drawBars('x',s);drawBars('y',sy);
+  let sTop=null,syTop=null;
+  if(c.topBars){
+    sTop=E.steel(c,'x',0,'top');syTop=E.steel(c,'y',0,'top');
+    drawBars('x',sTop,true);drawBars('y',syTop,true);
+  }
+  ctx.setLineDash([]);
+  // Etiquetas
+  ctx.fillStyle='#172c3a';ctx.font='12px Segoe UI';ctx.textAlign='left';
+  const line=(label,st,color,y)=>{ctx.fillStyle=color;ctx.fillText(`${label}: ${st.n}Ø${fmt(U.mmToCm(st.axis==='x'?c.dbX:c.dbY))}cm @ ${fmt(U.mmToCm(st.actual))}cm${st.needsHook?' · con gancho a 90° (ldh='+fmt(U.mmToCm(st.ldh))+'cm)':' · sin gancho'}`,8,y);};
+  let ly=H-(c.topBars?54:30);
+  line('X inferior (línea continua)',s,'#356ac3',ly);ly+=16;
+  line('Y inferior (línea continua)',sy,'#bb6419',ly);ly+=16;
+  if(c.topBars){line('X superior (línea discontinua, mismo trazado en planta)',sTop,'#356ac3',ly);ly+=16;line('Y superior (línea discontinua, mismo trazado en planta)',syTop,'#bb6419',ly);}
+  ctx.textAlign='center';ctx.fillStyle='#526978';ctx.fillText(`L = ${fmt(c.L,2)} m`,W/2,y0+hh+22);
+  ctx.save();ctx.translate(x0-16,y0+hh/2);ctx.rotate(-Math.PI/2);ctx.fillText(`B = ${fmt(c.B,2)} m`,0,0);ctx.restore();
+}
+function lineChart(canvas,series,key,c,axis){const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height,box={x:60,y:20,w:W-80,h:H-64},all=series.flatMap(s=>s.points.map(p=>p[key])),min=Math.min(0,...all),max=Math.max(1e-8,...all),pad=(max-min)*.08,lo=min-pad,hi=max+pad,len=axis==='x'?c.L:c.B,px=t=>box.x+(t/len+.5)*box.w,py=v=>box.y+(hi-v)/(hi-lo)*box.h;ctx.clearRect(0,0,W,H);ctx.font='11px Segoe UI';ctx.textAlign='right';for(let i=0;i<=4;i++){const val=lo+(hi-lo)*i/4,y=py(val);ctx.strokeStyle='#e2e9ee';ctx.beginPath();ctx.moveTo(box.x,y);ctx.lineTo(box.x+box.w,y);ctx.stroke();ctx.fillStyle='#586c79';ctx.fillText(fmt(val,0),box.x-8,y+4);}ctx.strokeStyle='#8ba2af';ctx.beginPath();ctx.moveTo(box.x,py(0));ctx.lineTo(box.x+box.w,py(0));ctx.stroke();for(const s of series){ctx.strokeStyle=colors[s.method];ctx.lineWidth=2.3;ctx.beginPath();s.points.forEach((p,i)=>i?ctx.lineTo(px(p.t),py(p[key])):ctx.moveTo(px(p.t),py(p[key])));ctx.stroke();}ctx.textAlign='center';ctx.fillStyle='#586c79';for(let i=0;i<=4;i++){const t=-len/2+len*i/4;ctx.fillText(fmt(t,2),px(t),H-20);}ctx.fillText(`${axis.toUpperCase()} (m)`,W/2,H-3);}
+function renderDiagrams(){renderLocalMoments();const idx=+$('ultimateCase').value,axis=$('diagramAxis').value,series=methods.map(method=>({method,r:caseResult(method,'ultimate',idx)})).filter(s=>s.r).map(s=>({method:s.method,points:s.r.profiles[axis].map(p=>({...p,M:U.force(p.M),V:U.force(p.V)}))}));lineChart($('momentChart'),series,'M',current.config,axis);lineChart($('shearChart'),series,'V',current.config,axis);}
+function compare(a,b){const out={from:[a.config.mesh,a.config.order],to:[b.config.mesh,b.config.order],models:{}};for(const k of ['winkler','pasternak']){const A=a.models[k],B=b.models[k];if(A.failures.length||B.failures.length){out.models[k]={invalid:true};continue;}let pressure=0,contact=0,settlement=0;for(const r of A.service){const t=B.service.find(s=>s.load.name===r.load.name);pressure=Math.max(pressure,Math.abs(t.qmax-r.qmax)/Math.max(1,t.qmax));contact=Math.max(contact,Math.abs(t.area-r.area)/(b.config.L*b.config.B));settlement=Math.max(settlement,Math.abs(t.wmax-r.wmax)/Math.max(.1,t.wmax));}let moments=0;for(const axis of ['x','y'])for(const face of ['bottom','top'])moments=Math.max(moments,Math.abs(A.envelope[axis][face]-B.envelope[axis][face])/Math.max(10,B.envelope[axis][face]));out.models[k]={pressure,contact,settlement,moments};}return out;}
+function renderConvergence(){const v=lastConvergence;if(!v){$('convergence').innerHTML='<p class="hint">Aún no comprobado. Compare dos resoluciones antes de interpretar picos locales o diferencias pequeñas entre modelos.</p>';return;}$('convergence').innerHTML=`<p class="small">Comparación: ${v.from[0]} celdas X / nivel de placa ${v.from[1]} → ${v.to[0]} celdas X / nivel de placa ${v.to[1]}. Se muestran ahora los resultados refinados. Umbral orientativo 5%; no es un criterio normativo.</p><div class="table-wrap"><table class="results"><thead><tr><th>Modelo</th><th>Δ q máx.</th><th>Δ área / base</th><th>Δ w máx.</th><th>Δ momentos</th><th>Diagnóstico</th></tr></thead><tbody>${Object.entries(v.models).map(([k,s])=>s.invalid?`<tr><td>${names[k]}</td><td colspan="5">Comparación incompleta: hay casos sin solución.</td></tr>`:`<tr><td>${names[k]}</td><td>${fmt(s.pressure*100,1)} %</td><td>${fmt(s.contact*100,1)} pp</td><td>${fmt(s.settlement*100,1)} %</td><td>${fmt(s.moments*100,1)} %</td><td>${badge(Math.max(s.pressure,s.contact,s.settlement,s.moments)<=.05?'Variación ≤ 5%':'Resultado sensible al refinamiento',Math.max(s.pressure,s.contact,s.settlement,s.moments)<=.05?'ok':'warn')}</td></tr>`).join('')}</tbody></table></div><p class="small">La comparación no sustituye un contraste independiente. Cambios fuertes cerca de bordes o de la columna pueden requerir otro nivel de placa, otra discretización o un modelo de placa más adecuado.</p>`;}
+function render(){if(!current)return;$('results').hidden=false;$('print').disabled=false;diagnostic();renderService();renderResistance();renderDiagrams();renderConvergence();$('printInputs').innerHTML=Object.entries(current.config).map(([k,v])=>`<div><b>${escapeHtml(k)}</b>: ${typeof v==='number'?fmt(U.toUI(k,v),4):escapeHtml(v)} ${U.fields[k]?.unit||''}</div>`).join('');}
+function download(filename,text){const url=URL.createObjectURL(new Blob([text],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),500);}
+$('inputs').addEventListener('submit',e=>{e.preventDefault();run();});$('inputs').addEventListener('input',e=>{if(e.target.id==='auto'||e.target.closest('#gpEstimatePanel'))return;clearTimeout(timer);cancel();clearResults('Datos modificados · resultados pendientes');$('error').hidden=true;geometryHint();if($('auto').checked)timer=setTimeout(run,700);});
+
+// --- Estimador de Gp a partir de Es del suelo (Vlasov-Leontiev simplificado) ---
+$('gpEstimateToggle').addEventListener('click',()=>{
+  const panel=$('gpEstimatePanel'),hidden=panel.hidden;
+  panel.hidden=!hidden;
+  if(hidden&&!$('gpH').value){const B=parseFloat($('B').value)||2.5;$('gpH').value=(2*B).toFixed(2);}
+});
+function gpSoilTypeChanged(){
+  const val=$('gpSoilType').value,manual=val==='manual';
+  if(!manual){const [es,nu]=val.split(',').map(Number);$('gpEsManual').value=es;$('gpNuManual').value=nu;}
+}
+$('gpSoilType').addEventListener('change',gpSoilTypeChanged);
+$('gpEstimateCompute').addEventListener('click',()=>{
+  const resultEl=$('gpEstimateResult');
+  const Hui=parseFloat($('gpH').value);
+  const EsUI=parseFloat($('gpEsManual').value); // kgf/cm2
+  const nu=parseFloat($('gpNuManual').value);
+  if(!(Hui>0)){resultEl.innerHTML='<p class="small">Ingrese un espesor H válido (mayor que 0).</p>';return;}
+  if(!(EsUI>0)){resultEl.innerHTML='<p class="small">Ingrese un Es de suelo válido (mayor que 0).</p>';return;}
+  if(!(nu>=0&&nu<0.49)){resultEl.innerHTML='<p class="small">Ingrese un ν de suelo válido (entre 0 y 0.49).</p>';return;}
+  const EsSI=EsUI*10/U.kgfPerKN*1000; // kgf/cm2 -> MPa (misma conversión que fc/fy) -> kPa
+  const H=Hui;
+  const k1SI=EsSI/(H*(1-nu*nu));      // kN/m3, ks teórico de referencia
+  const GpSI=EsSI*H/(6*(1+nu));       // kN/m
+  const k1UI=U.toUI('ks',k1SI), GpUI=U.toUI('Gp',GpSI);
+  const ksActualUI=parseFloat($('ks').value)||0;
+  const diffPct=ksActualUI>0?100*Math.abs(ksActualUI-k1UI)/ksActualUI:null;
+  const bigGap=diffPct!==null&&diffPct>50;
+  resultEl.innerHTML=`
+    <p class="small">ks teórico de referencia: <strong>${k1UI.toLocaleString('es-PE',{maximumFractionDigits:3})} kgf/cm³</strong> · su ks actual: <strong>${ksActualUI.toLocaleString('es-PE',{maximumFractionDigits:3})} kgf/cm³</strong>${diffPct!==null?` · diferencia: ${diffPct.toFixed(0)}%`:''}</p>
+    <p class="small">Gp estimado (par consistente con el ks teórico): <strong>${GpUI.toLocaleString('es-PE',{maximumFractionDigits:1})} kgf/cm</strong></p>
+    ${bigGap?'<p class="hint" style="background:#fff7e8;border-color:#ead5ac">Su ks actual difiere de este ks teórico en más de 50%. Esto es esperable: los valores de ks de tablas o ensayos de placa suelen ser distintos del que predice esta teoría continua (efecto de escala conocido en geotecnia). Usar el Gp de aquí junto con su propio ks no es un par estrictamente consistente — trátelo como una referencia de orden de magnitud, o use el botón de abajo para aplicar el par teórico completo.</p>':''}
+    <div class="actions" style="margin-top:8px">
+      <button type="button" class="primary" id="gpApplyGpOnly">Usar solo Gp (mantener mi ks)</button>
+      <button type="button" id="gpApplyBoth">Usar ks y Gp juntos (par teórico consistente)</button>
+    </div>`;
+  $('gpApplyGpOnly').addEventListener('click',()=>{$('Gp').value=GpUI;$('Gp').dispatchEvent(new Event('input',{bubbles:true}));});
+  $('gpApplyBoth').addEventListener('click',()=>{$('ks').value=k1UI;$('Gp').value=GpUI;$('ks').dispatchEvent(new Event('input',{bubbles:true}));$('Gp').dispatchEvent(new Event('input',{bubbles:true}));});
+});
+gpSoilTypeChanged();
+$('serviceCase').onchange=renderService;$('ultimateCase').onchange=renderDiagrams;$('diagramAxis').onchange=renderDiagrams;
+$('ecButton').onclick=()=>{$('Ec').value=U.toUI('Ec',4700*Math.sqrt(U.toSI('fc',+$('fc').value)));$('Ec').dispatchEvent(new Event('input',{bubbles:true}));};
+$('reset').onclick=()=>{cancel();setInputs(E.defaults);$('system').value='isolated';run();};
+$('loadPreset').onclick=()=>{const preset=$('preset').value||'original',c={...E.defaults};if(preset!=='original'){Object.assign(c,{type:preset==='simple'?'center':preset,PD:1000,PL:0,PE:0,MDx:0,MDy:0,MLx:0,MLy:0,MEx:0,MEy:0});}cancel();setInputs(c);$('system').value='isolated';run();};
+$('save').onclick=()=>{try{const c=readInputs();E.validate(c);download('caso-zapata.json',JSON.stringify({version:3,plateFormulation:'local-cubic-splines',units:'kgf-m-cm',system:$('system').value,config:U.configToUI(c)},null,2));}catch(e){showError(e.message);}};
+$('importButton').onclick=()=>$('importFile').click();$('importFile').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;if(f.size>100000)throw Error('El archivo de caso es demasiado grande.');const data=JSON.parse(await f.text());if(![2,3].includes(data.version)||!data.config||(data.version===3&&data.units!=='kgf-m-cm'))throw Error('Formato o unidades del caso no reconocidos.');const c={...E.defaults};for(const k of Object.keys(c))if(k in data.config){if(typeof data.config[k]!==typeof c[k])throw Error(`Tipo de dato inválido: ${k}`);c[k]=data.version===3?U.toSI(k,data.config[k]):data.config[k];}E.validate(c);setInputs(c);$('system').value=data.system==='connected'?'connected':'isolated';run();}catch(err){cancel();showError(err.message);}finally{e.target.value='';}};
+$('refine').onclick=()=>{if(!current)return;const baseline=current,c={...current.config};if($('refineTarget').value==='soil')c.mesh=c.mesh<18?18:c.mesh<24?24:30;else c.order=Math.min(14,c.order+2);if(c.mesh===baseline.config.mesh&&c.order===baseline.config.order){$('convergence').innerHTML='<p class="hint">Se alcanzó la resolución máxima de esta versión. Si el resultado sigue siendo sensible, contraste con una discretización independiente; no se declara convergencia por alcanzar el máximo.</p>';return;}setInputs(c);launch(c,baseline);};
+$('print').onclick=()=>{if(!current)return;$('methodology').open=true;window.print();};
+window.addEventListener('error',e=>{if(e.error)console.error(e.error);});
+setInputs(E.defaults);run();
+
+// Included in app.js scope at build time.
+function renderLocalMoments(){
+  renderFaceDiagnostics();
+  const idx=+$('ultimateCase').value,key=$('localQuantity').value||'mx',c=current.config;
+  const fields=['winkler','pasternak'].map(k=>caseResult(k,'ultimate',idx)?.demands.localField);
+  const scale=Math.max(1e-9,...fields.filter(Boolean).flatMap(f=>f.points.map(p=>Math.abs(p[key]))));
+  fields.forEach((f,index)=>{
+    const canvas=$('local-'+['winkler','pasternak'][index]),ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
+    ctx.clearRect(0,0,W,H);ctx.font='12px Segoe UI';ctx.textAlign='center';ctx.fillStyle='#172c3a';
+    if(!f){ctx.fillText('Sin resultado válido',W/2,H/2);canvas.onmousemove=null;return;}
+    const zoom=Math.min((W-90)/c.L,(H-120)/c.B),w=c.L*zoom,h=c.B*zoom,x0=(W-w)/2,y0=48,xy=p=>[x0+(p.x+c.L/2)*zoom,y0+(c.B/2-p.y)*zoom];
+    const color=v=>Math.abs(v)<1e-12?'#eee':`hsl(${v<0?220:8},80%,${96-48*Math.abs(v)/scale}%)`;
+    // Voronoi rectangles around the sampled nodes, clipped to the footing.
+    f.points.forEach(p=>{const x1=Math.max(-c.L/2,p.x-c.L/64),x2=Math.min(c.L/2,p.x+c.L/64),y1=Math.max(-c.B/2,p.y-c.B/64),y2=Math.min(c.B/2,p.y+c.B/64);ctx.fillStyle=color(p[key]);ctx.fillRect(x0+(x1+c.L/2)*zoom,y0+(c.B/2-y2)*zoom,(x2-x1)*zoom+.2,(y2-y1)*zoom+.2);});
+    ctx.strokeStyle='#172c3a';ctx.strokeRect(x0,y0,w,h);const col=E.geometry(c).col;ctx.strokeRect(x0+(col[0]+c.L/2)*zoom,y0+(c.B/2-col[3])*zoom,c.cx*zoom,c.cy*zoom);
+    const peak=f.points.reduce((a,b)=>Math.abs(a[key])>=Math.abs(b[key])?a:b),pt=xy(peak);ctx.strokeStyle='#fff';ctx.lineWidth=4;ctx.beginPath();ctx.arc(...pt,6,0,2*Math.PI);ctx.stroke();ctx.strokeStyle='#111';ctx.lineWidth=1.5;ctx.stroke();
+    const lo=Math.min(...f.points.map(p=>p[key])),hi=Math.max(...f.points.map(p=>p[key]));ctx.fillStyle='#172c3a';ctx.fillText(current.loads.ultimate[idx].name,W/2,18);ctx.fillText(`${key}: mín. ${fmt(U.force(lo))} · máx. ${fmt(U.force(hi))} kgf·m/m`,W/2,36);
+    ctx.fillText('X → · Y ↑ · círculo: mayor valor absoluto muestreado',W/2,H-42);
+    for(let i=0;i<240;i++){ctx.fillStyle=color(scale*(2*i/239-1));ctx.fillRect((W-240)/2+i,H-28,1,8);}ctx.fillStyle='#172c3a';ctx.fillText(`${fmt(-U.force(scale))} ← 0 → ${fmt(U.force(scale))} kgf·m/m`,W/2,H-5);
+    canvas.onmousemove=e=>{const box=canvas.getBoundingClientRect(),x=((e.clientX-box.left)*W/box.width-x0)/zoom-c.L/2,y=c.B/2-((e.clientY-box.top)*H/box.height-y0)/zoom;if(Math.abs(x)>c.L/2||Math.abs(y)>c.B/2){canvas.title='Fuera de la base';return;}const i=Math.round((x/c.L+.5)*32),j=Math.round((y/c.B+.5)*32),p=f.points[j*33+i];canvas.title=`Muestra x=${fmt(p.x)} m, y=${fmt(p.y)} m; mx=${fmt(U.force(p.mx))}; my=${fmt(U.force(p.my))}; mxy=${fmt(U.force(p.mxy))}; ${key}=${fmt(U.force(p[key]))} kgf·m/m`;};
+  });
+  const rows=[];
+  for(const method of methods)for(const axis of ['x','y'])for(const face of ['bottom','top']){
+    const model=current.models[method],en=model.envelope[axis],t=en[face+'Trace'],combo=current.loads.ultimate.findIndex(l=>l.name===en[face+'Case']);
+    let origin='Sin demanda calculada en las verificaciones realizadas';
+    if(t?.source==='plate')origin=`Punto (${fmt(t.x,3)}, ${fmt(t.y,3)}) m · mx ${fmt(U.force(t.mx))}; my ${fmt(U.force(t.my))}; mxy ${fmt(U.force(t.mxy))} kgf·m/m · ${face==='top'?'−':'+'}m${axis} + |mxy|, limitado a ≥ 0`;
+    if(t?.source==='section')origin=`Corte ${axis.toUpperCase()} = ${fmt(t.coordinate,3)} m · M ${fmt(U.force(t.total))} kgf·m / ancho ${fmt(t.width)} m · demanda ${face==='top'?'máx(0, −M/ancho)':'máx(0, M/ancho)'}`;
+    rows.push(`<tr><td>${names[method]} · ${axis.toUpperCase()} ${face==='top'?'superior':'inferior'}</td><td>${fmt(U.force(en[face]))} kgf·m/m</td><td>${escapeHtml(origin)}</td><td>${combo>=0?`<button type="button" onclick="showMomentCase(${combo},'${face+axis.toUpperCase()}')">${escapeHtml(en[face+'Case'])}</button>`:'—'}</td><td>${model.failures.some(f=>f.stage==='ultimate')?'Envolvente incompleta':method==='rigid'?'Demanda de corte global':'Demanda de diseño: corte en la cara de columna · Pico local informativo (no de diseño): '+fmt(U.force(en['local'+face[0].toUpperCase()+face.slice(1)]))+' kgf·m/m'}</td></tr>`);
+  }
+  $('momentTrace').innerHTML='<h3>Origen de las demandas de la envolvente</h3><p>Pulse la combinación para sincronizar mapas y diagramas. Los componentes de cada punto son simultáneos; no se combinan máximos independientes.</p><div class="table-wrap"><table class="results"><thead><tr><th>Modelo / cara</th><th>Demanda</th><th>Origen y componentes</th><th>Combinación</th><th>Alcance</th></tr></thead><tbody>'+rows.join('')+'</tbody></table></div>';
+}
+function showMomentCase(index,key){$('ultimateCase').value=index;$('localQuantity').value=key;renderDiagrams();}
+
+$('localQuantity').onchange=renderLocalMoments;
+function renderFaceDiagnostics(){
+ const idx=+$('ultimateCase').value,axis=$('diagramAxis').value||'x',c=current.config,upper=axis.toUpperCase();
+ const charts=['winkler','pasternak'].map(method=>{
+  const r=caseResult(method,'ultimate',idx),field=r?.demands.localField;if(!field)return `<p>${names[method]}: sin resultado válido.</p>`;
+  const points=field.points,peak=points.reduce((a,b)=>a['top'+upper]>=b['top'+upper]?a:b),fixed=axis==='x'?'y':'x';
+  const cut=points.filter(p=>Math.abs(p[fixed]-peak[fixed])<1e-10),series=[{name:'Flexión pura inferior',color:'#1468bf',value:p=>Math.max(0,p['m'+axis])},{name:'Flexión pura superior',color:'#c82447',value:p=>Math.max(0,-p['m'+axis])},{name:'Demanda inferior con torsión',color:'#1468bf',dash:true,value:p=>p['bottom'+upper]},{name:'Demanda superior con torsión',color:'#c82447',dash:true,value:p=>p['top'+upper]}];
+  const max=Math.max(1,...series.flatMap(s=>cut.map(p=>U.force(s.value(p))))),len=axis==='x'?c.L:c.B;
+  const x=p=>65+440*(p[axis]/len+.5),y=v=>210-170*U.force(v)/max;
+  let svg='<svg viewBox="0 0 550 270" role="img" aria-label="Flexión pura y demandas de ambas caras" style="width:100%;background:white"><path d="M65 35V210H505" fill="none" stroke="#667"/>';
+  for(let i=0;i<=4;i++){const v=max*i/4,yy=210-170*i/4;svg+=`<path d="M65 ${yy}H505" stroke="#ddd"/><text x="60" y="${yy+4}" text-anchor="end" font-size="11">${fmt(v,0)}</text>`;}
+  series.forEach(s=>{svg+=`<polyline points="${cut.map(p=>`${x(p)},${y(s.value(p))}`).join(' ')}" fill="none" stroke="${s.color}" stroke-width="2" ${s.dash?'stroke-dasharray="6 4"':''}/>`;});
+  for(let i=0;i<=4;i++)svg+=`<text x="${65+110*i}" y="230" text-anchor="middle" font-size="11">${fmt(-len/2+len*i/4)}</text>`;
+  svg+=`<text x="275" y="255" text-anchor="middle" font-size="12">${upper} (m) · momentos en kgf·m/m</text></svg>`;
+  const normal=peak['m'+axis],pure=Math.max(0,-normal),tw=Math.abs(peak.mxy),sigma=6*normal/(c.h*c.h);
+  return `<div><h3>${names[method]} · corte ${fixed.toUpperCase()} = ${fmt(peak[fixed],3)} m</h3>${svg}<p class="small">Azul: inferior · rojo: superior · línea continua: flexión pura · discontinua: demanda con torsión. Todas son magnitudes positivas por cara.</p><p>Punto de máxima demanda superior ${upper} de esta combinación: (${fmt(peak.x,3)}, ${fmt(peak.y,3)}) m.</p><dl><dt>m${axis} con signo</dt><dd>${fmt(U.force(normal))} kgf·m/m</dd><dt>Flexión pura superior máx(0, −m${axis})</dt><dd>${fmt(U.force(pure))} kgf·m/m</dd><dt>|mxy|</dt><dd>${fmt(U.force(tw))} kgf·m/m</dd><dt>Demanda superior máx(0, −m${axis} + |mxy|)</dt><dd>${fmt(U.force(peak['top'+upper]))} kgf·m/m</dd><dt>σ${axis} inferior / superior</dt><dd>${fmt(U.pressure(sigma),3)} / ${fmt(U.pressure(-sigma),3)} kgf/cm²</dd></dl><p class="small">Tensión normal elástica: σ inferior = 6m/h², superior = −6m/h²; positivo significa tracción. Sección bruta sin fisurar, sin esfuerzo de membrana. Estas tensiones normales no incluyen las tensiones principales por torsión y no autorizan omitir acero.</p></div>`;
+ });
+ $('faceDiagnostics').innerHTML=`<h3>Diagnóstico de ambas caras · dirección ${upper}</h3><p>${escapeHtml(current.loads.ultimate[idx].name)}. Cada corte pasa por el máximo superior muestreado de su modelo en esta combinación. Cambie la dirección X/Y en los diagramas. No existen dos momentos independientes a través del espesor: estas curvas separan la flexión según la cara traccionada.</p><div class="pair">${charts.join('')}</div>`;
+}
+</script>
+</body></html>
