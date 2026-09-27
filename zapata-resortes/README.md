@@ -1,10 +1,8 @@
 # Zapata — Resortes (app publicada)
 
 Motor de zapatas sobre suelo elástico (Rígido, Winkler, Pasternak),
-conectado al motor en C++/WebAssembly.
-
-Este repositorio recibe el contenido de forma automática desde el
-repositorio privado "zapata-motor" una vez configurada la automatización
-(GitHub Actions). Si lo subiste manualmente por ahora, no hay problema —
-solo ten en cuenta que un futuro push automático reemplazará este
-contenido por el que compile el flujo.
+conectado al motor en C++/WebAssembly. Incluye:
+- Worker reutilizado entre cálculos (no se vuelve a descargar el motor).
+- Factorización de la matriz de rigidez compartida entre las 10
+  combinaciones de carga cuando el contacto es completo (el caso más
+  común), en vez de rehacerla desde cero cada vez.

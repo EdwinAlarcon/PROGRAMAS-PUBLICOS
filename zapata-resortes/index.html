@@ -296,37 +296,65 @@ function setInputs(c){for(const[k,v]of Object.entries(E.defaults)){const el=$(k)
 function readInputs(){const c={};for(const[k,v]of Object.entries(E.defaults)){const el=$(k);c[k]=el.type==='checkbox'?el.checked:typeof v==='number'?U.toSI(k,Number(el.value)):el.value;if(typeof v==='number'&&el.value.trim()==='')throw Error(`Falta el dato ${k}.`);}return c;}
 function geometryHint(){const type=$('type').value;$('geometryHint').textContent=type==='center'?'Columna centrada geométricamente. Los momentos aplicados pueden desplazar la resultante y producir contacto parcial.':'Columna al borde negativo de la zapata. Aumentar la dimensión hacia el interior no garantiza recuperar contacto completo. No se supone una viga centradora.';}
 function clearResults(message){$('results').hidden=true;$('print').disabled=true;current=null;lastConvergence=null;$('status').textContent=message;}
-function cancel(){generation++;if(worker){worker.terminate();worker=null;}$('progress').hidden=true;$('refine').disabled=false;}
+function cancel(){generation++;$('progress').hidden=true;$('refine').disabled=false;}
 function workerMain(){
   // Motor real: WebAssembly compilado desde C++ (zapatas.wasm). Este worker
   // ya NO usa el motor en JavaScript (engine-source) para el cálculo pesado
   // — solo llama a zap_analyze(), que devuelve el mismo árbol de datos
   // (config, loads, models con envelope/map/profiles/demands) que antes
   // armaba augment() del lado JS, ya calculado dentro del C++.
+  //
+  // El módulo WASM se carga UNA SOLA VEZ (la primera vez que llega un
+  // mensaje) y se reutiliza para todos los cálculos siguientes — antes,
+  // cada cambio de dato destruía este worker y creaba uno nuevo, que
+  // tenía que volver a pedir zapatas.wasm por la red cada vez.
+  let modulePromise=null;
+  function getModule(wasmJsUrl,wasmBinaryUrl){
+    if(!modulePromise){
+      importScripts(wasmJsUrl); // define ZapEngine() en este worker (una sola vez)
+      modulePromise=ZapEngine({locateFile:path=>path.endsWith('.wasm')?wasmBinaryUrl:path});
+    }
+    return modulePromise;
+  }
   self.onmessage=async e=>{
     try{
-      const {config,wasmJsUrl,wasmBinaryUrl}=e.data;
+      const {config,wasmJsUrl,wasmBinaryUrl,requestId}=e.data;
       const start=performance.now();
-      importScripts(wasmJsUrl); // define ZapEngine() en este worker
-      const Module=await ZapEngine({locateFile:path=>path.endsWith('.wasm')?wasmBinaryUrl:path});
+      const Module=await getModule(wasmJsUrl,wasmBinaryUrl);
       const analyze=Module.cwrap('zap_analyze','number',['string']);
       const ptr=analyze(JSON.stringify(config));
       const json=Module.UTF8ToString(ptr);
       Module.ccall('zap_free','void',['number'],[ptr]);
       const data=JSON.parse(json);
       if(!data.ok)throw new Error(data.error||'Error desconocido del motor.');
-      self.postMessage({done:data,ms:performance.now()-start});
+      self.postMessage({done:data,ms:performance.now()-start,requestId});
     }catch(err){
-      self.postMessage({error:err.message||String(err)});
+      self.postMessage({error:err.message||String(err),requestId:e.data.requestId});
     }
   };
 }
-function launch(c,baseline=null){cancel();const id=generation;$('error').hidden=true;$('results').hidden=true;$('print').disabled=true;$('progress').hidden=false;$('status').textContent='Resolviendo placa, suelo y contacto…';$('refine').disabled=true;
-  const source='('+workerMain.toString()+')();',url=URL.createObjectURL(new Blob([source],{type:'text/javascript'}));worker=new Worker(url);URL.revokeObjectURL(url);
+function ensureWorker(){
+  if(worker)return worker;
+  const source='('+workerMain.toString()+')();',url=URL.createObjectURL(new Blob([source],{type:'text/javascript'}));
+  worker=new Worker(url);URL.revokeObjectURL(url);
+  worker.onmessage=event=>{
+    const data=event.data;
+    if(data.requestId!==generation)return; // resultado de un cálculo ya superado por uno más nuevo: se ignora
+    if(data.progress){$('status').textContent=`Calculando ${data.progress}`;return;}
+    $('progress').hidden=true;$('refine').disabled=false;
+    if(data.error){showError(data.error);return;}
+    current=data.done;lastConvergence=pendingBaseline?compare(pendingBaseline,current):null;
+    $('status').textContent=`Calculado · ${fmt(data.ms/1000,1)} s · ${pendingConfig.mesh} celdas X / nivel de placa ${pendingConfig.order} · ${new Date().toLocaleTimeString('es-PE')}`;
+    populateCases();render();
+  };
+  worker.onerror=err=>{showError(err.message||'No se pudo ejecutar el cálculo en segundo plano. Verifique que zapatas.wasm y zapatas.js estén junto a esta página.');$('progress').hidden=true;$('refine').disabled=false;};
+  return worker;
+}
+let pendingConfig=null,pendingBaseline=null;
+function launch(c,baseline=null){generation++;const id=generation;pendingConfig=c;pendingBaseline=baseline;$('error').hidden=true;$('results').hidden=true;$('print').disabled=true;$('progress').hidden=false;$('status').textContent='Resolviendo placa, suelo y contacto…';$('refine').disabled=true;
+  const w=ensureWorker();
   const wasmJsUrl=new URL('zapatas.js',document.baseURI).href,wasmBinaryUrl=new URL('zapatas.wasm',document.baseURI).href;
-  worker.onmessage=event=>{if(id!==generation)return;const data=event.data;if(data.progress){$('status').textContent=`Calculando ${data.progress}`;return;}worker.terminate();worker=null;$('progress').hidden=true;$('refine').disabled=false;if(data.error){showError(data.error);return;}current=data.done;lastConvergence=baseline?compare(baseline,current):null;$('status').textContent=`Calculado · ${fmt(data.ms/1000,1)} s · ${c.mesh} celdas X / nivel de placa ${c.order} · ${new Date().toLocaleTimeString('es-PE')}`;populateCases();render();};
-  worker.onerror=err=>{if(id!==generation)return;cancel();showError(err.message||'No se pudo ejecutar el cálculo en segundo plano. Verifique que zapatas.wasm y zapatas.js estén junto a esta página.');};
-  worker.postMessage({config:c,wasmJsUrl,wasmBinaryUrl});
+  w.postMessage({config:c,wasmJsUrl,wasmBinaryUrl,requestId:id});
 }
 function showError(message){clearResults('Datos o modelo pendientes de corrección');$('error').textContent=message;$('error').hidden=false;}
 function run(){clearTimeout(timer);cancel();try{if($('system').value!=='isolated')throw Error('El sistema conectado requiere modelar la viga, la segunda zapata y sus acciones. Esta versión compara tres métodos para una zapata aislada; no representa implícitamente una viga centradora.');const c=readInputs();E.validate(c);current=null;lastConvergence=null;launch(c);}catch(e){showError(e.message);}}
